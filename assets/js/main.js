@@ -172,16 +172,16 @@ function initRailArrows() {
 function initVideos() {
   const cards = document.querySelectorAll("[data-vid]");
   if (!cards.length) return;
-  // play / pause when in view
+  // Auto-play only the clips currently in view; pause the rest (keeps it light)
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         const v = e.target.querySelector("video");
         if (!v) return;
-        if (e.isIntersecting) { v.play().catch(() => {}); }
-        else { v.pause(); }
+        if (e.isIntersecting) { if (v.paused) v.play().catch(() => {}); }
+        else { if (!v.paused) v.pause(); }
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.5 });
     cards.forEach(c => io.observe(c));
   } else {
     cards.forEach(c => c.querySelector("video")?.play().catch(() => {}));
