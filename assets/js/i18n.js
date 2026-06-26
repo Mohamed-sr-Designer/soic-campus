@@ -38,7 +38,7 @@ const I18N = {
     "foot.tag": "The digital cinema campus of the Middle East.",
     "foot.explore": "Explore", "foot.campus": "Campus", "foot.company": "Company", "foot.connect": "Connect",
     "foot.rights": "© 2026 SOIC — School of Cinema. Cairo, Egypt.",
-    "partners.title": "Trained on industry-standard gear · in partnership with",
+    "partners.title": "Industry partners & accreditation",
     "modes.campus": "On-campus", "modes.online": "Live online", "modes.recorded": "Recorded",
     "students.kicker": "From our students", "students.title": "A community that ships, together.", "students.sub": "Real words from the filmmakers who turned passion into a career at SOIC.",
     "loc.kicker": "Visit the campus", "loc.title": "Downtown Cairo. Where it all happens.", "loc.name": "SOIC — School of Cinema", "loc.addr": "1 Fahmy St., Abdeen,<br>Downtown Cairo, Egypt", "loc.directions": "Get directions",
@@ -48,6 +48,8 @@ const I18N = {
     "role.student":"Student","role.instructor":"Instructor",
     "dash.greet":"Good evening","dash.continue":"Continue · Module 3 — Light & Shadow","dash.resume":"Resume lesson","dash.upnext":"Up next in your program","dash.deadlines":"Deadlines","dash.spaces":"From your spaces",
     "rail.today":"Today's stage","rail.online":"Online now · cohort","rail.goal":"This week's goal","rail.ai":"AI study buddy",
+    "t.attendance":"Attendance","t.assignments":"Assignments","t.due":"due","t.duetom":"1 due tomorrow","t.pieces":"Portfolio pieces","t.added2":"▲ 2 this week","t.rank":"Cohort rank","t.of42":"of 42","t.up2":"▲ up 2",
+    "ph.courses":"Your enrolled diplomas and electives — on-campus, live online, and recorded.","ph.live":"Join live, raise your hand, and never miss a session — replays land here automatically.","ph.assignments":"Every submission auto-builds your portfolio. Drag between columns as you work.","ph.career":"Jobs, internships and gigs from studios, agencies and production houses across the region — matched to your skills.",
   },
   ar: {
     "nav.programs": "البرامج", "nav.campus": "الحرم", "nav.faculty": "هيئة التدريس",
@@ -84,7 +86,7 @@ const I18N = {
     "foot.tag": "الحرم الرقمي للسينما في الشرق الأوسط.",
     "foot.explore": "استكشف", "foot.campus": "الحرم", "foot.company": "الشركة", "foot.connect": "تواصل",
     "foot.rights": "© ٢٠٢٦ SOIC — مدرسة السينما. القاهرة، مصر.",
-    "partners.title": "تدرّب على معدات احترافية · بالشراكة مع",
+    "partners.title": "شركاء الصناعة وجهات الاعتماد",
     "modes.campus": "حضوري", "modes.online": "أونلاين مباشر", "modes.recorded": "مُسجّل",
     "students.kicker": "من طلابنا", "students.title": "مجتمع يصنع الأفلام معًا.", "students.sub": "كلمات حقيقية من صنّاع أفلام حوّلوا الشغف إلى مهنة في SOIC.",
     "loc.kicker": "زُر الحرم", "loc.title": "وسط القاهرة، حيث يحدث كل شيء.", "loc.name": "SOIC — مدرسة السينما", "loc.addr": "١ شارع فهمي، عابدين،<br>وسط القاهرة، مصر", "loc.directions": "احصل على الاتجاهات",
@@ -94,6 +96,8 @@ const I18N = {
     "role.student":"طالب","role.instructor":"مدرّب",
     "dash.greet":"مساء الخير","dash.continue":"تابع · الوحدة ٣ — الضوء والظل","dash.resume":"استئناف الدرس","dash.upnext":"التالي في برنامجك","dash.deadlines":"المواعيد النهائية","dash.spaces":"من مساحاتك",
     "rail.today":"على المسرح اليوم","rail.online":"متصل الآن · الدفعة","rail.goal":"هدف هذا الأسبوع","rail.ai":"مساعد المذاكرة الذكي",
+    "t.attendance":"الحضور","t.assignments":"التكليفات","t.due":"مستحقة","t.duetom":"١ مستحقة غدًا","t.pieces":"أعمال المعرض","t.added2":"▲ ٢ هذا الأسبوع","t.rank":"ترتيب الدفعة","t.of42":"من ٤٢","t.up2":"▲ +٢",
+    "ph.courses":"دبلوماتك ومقرراتك الاختيارية — حضوري، أونلاين مباشر، ومُسجّل.","ph.live":"انضمّ مباشرةً، ارفع يدك، ولا تفوّت أي جلسة — تظهر الإعادات هنا تلقائيًا.","ph.assignments":"كل تسليم يبني معرض أعمالك تلقائيًا. اسحب بين الأعمدة أثناء عملك.","ph.career":"وظائف وتدريبات وفرص من استوديوهات وشركات إنتاج في المنطقة — مطابقة لمهاراتك.",
   }
 };
 

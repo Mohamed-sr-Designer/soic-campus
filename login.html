@@ -42,54 +42,19 @@
         </button>
       </div>
 
-      <div class="rule" style="margin-bottom:20px">or sign in manually</div>
-
-      <form id="loginForm" class="stack" style="--s-4:16px">
-        <div class="field">
-          <label for="email">Email</label>
-          <div class="input-group"><span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><input class="input" id="email" type="email" placeholder="you@soic.edu" value="layla@soic.edu" /></div>
-        </div>
-        <div class="field">
-          <label for="pass">Password</label>
-          <div class="input-group"><span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><input class="input" id="pass" type="password" placeholder="••••••••" value="student123" /></div>
-          <div class="hint" id="loginHint"></div>
-        </div>
-        <div class="row between t-sm">
-          <label class="row" style="gap:8px"><input type="checkbox" checked style="accent-color:var(--gold-500)" /> Remember me</label>
-          <a href="#" class="link">Forgot password?</a>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-block">Log in</button>
-      </form>
-
-      <p class="muted t-sm" style="text-align:center;margin-top:22px">New to SOIC? <a href="apply.html" class="link">Apply to a program</a></p>
+      <p class="muted t-sm" style="text-align:center;margin-top:8px">Tap an account to enter the campus.</p>
+      <p class="muted t-sm" style="text-align:center;margin-top:18px">New to SOIC? <a href="apply.html" class="link">Apply to a program</a></p>
     </div>
   </main>
 </div>
 
 <script src="assets/js/main.js"></script>
 <script>
-(function () {
-  const ACCOUNTS = {
-    "layla@soic.edu": { pass: "student123", role: "student", go: "app.html" },
-    "asser@soic.edu": { pass: "teach123", role: "instructor", go: "instructor.html" },
-  };
-  const emailEl = document.getElementById("email"), passEl = document.getElementById("pass"), hint = document.getElementById("loginHint");
-  document.querySelectorAll(".demo-acct").forEach(b => b.addEventListener("click", () => {
-    emailEl.value = b.dataset.email; passEl.value = b.dataset.pass;
-    login();
-  }));
-  function login() {
-    const acc = ACCOUNTS[emailEl.value.trim().toLowerCase()];
-    if (acc && acc.pass === passEl.value) {
-      try { localStorage.setItem("soic-role", acc.role); localStorage.setItem("soic-auth", "1"); } catch (e) {}
-      window.location.href = acc.go;
-    } else {
-      hint.textContent = "Invalid email or password. Try a demo account above.";
-      document.getElementById("pass").closest(".field").classList.add("invalid");
-    }
-  }
-  document.getElementById("loginForm").addEventListener("submit", (e) => { e.preventDefault(); login(); });
-})();
+document.querySelectorAll(".demo-acct").forEach(b => b.addEventListener("click", () => {
+  const role = b.dataset.demo;
+  try { localStorage.setItem("soic-role", role); localStorage.setItem("soic-auth", "1"); } catch (e) {}
+  window.location.href = role === "instructor" ? "instructor.html" : "app.html";
+}));
 </script>
 </body>
 </html>
