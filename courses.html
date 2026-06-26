@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Courses · SOIC Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" /><link rel="stylesheet" href="assets/css/base.css" /><link rel="stylesheet" href="assets/css/components.css" /><link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="grain" data-role="student" data-active="courses" data-title="My Courses">
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="app">
+  <aside class="sidebar" data-sidebar></aside>
+  <div class="app-main"><div>
+    <header class="topbar" data-topbar></header>
+    <main id="main" class="app-body" style="max-width:1180px">
+      <div class="ph"><h1>My Courses</h1><p>Your enrolled diplomas and electives — on-campus, live online, and recorded.</p></div>
+
+      <div class="toolbar">
+        <div class="segmented" data-tabs2><button class="active">In progress</button><button>Completed</button><button>All</button></div>
+        <div class="spacer"></div>
+        <span class="chip active">All modes</span>
+        <span class="chip"><span class="mode on" style="border:0;padding:0">On-campus</span></span>
+        <span class="chip">Live online</span>
+        <span class="chip">Recorded</span>
+      </div>
+
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(320px,1fr))" data-stagger>
+        <!-- enrolled, in progress -->
+        <article class="card card-hover" style="overflow:hidden">
+          <div class="thumb" style="position:relative;aspect-ratio:16/9;overflow:hidden"><img src="assets/img/prog-filmmaking.jpeg" style="width:100%;height:100%;object-fit:cover" alt="" /><span class="badge badge-gold" style="position:absolute;top:12px;inset-inline-start:12px">Diploma · Enrolled</span></div>
+          <div class="card-pad">
+            <div class="row between"><h3 style="font-weight:600;font-size:var(--t-md)">Filmmaking</h3><span class="mono t-xs gold">62%</span></div>
+            <p class="muted t-sm" style="margin:6px 0 12px">Next: Lighting for Mood — Module 3</p>
+            <div class="progress"><i style="width:62%"></i></div>
+            <div class="prog-modes" style="margin-top:12px"><span class="mode on">On-campus</span><span class="mode online">Online</span><span class="mode rec">Recorded</span></div>
+            <a href="lesson.html" class="btn btn-primary btn-sm btn-block" style="margin-top:14px">Continue</a>
+          </div>
+        </article>
+
+        <article class="card card-hover" style="overflow:hidden">
+          <div class="thumb" style="position:relative;aspect-ratio:16/9;overflow:hidden"><img src="assets/img/prog-cinematography.jpeg" style="width:100%;height:100%;object-fit:cover" alt="" /><span class="badge" style="position:absolute;top:12px;inset-inline-start:12px">Elective</span></div>
+          <div class="card-pad">
+            <div class="row between"><h3 style="font-weight:600;font-size:var(--t-md)">Cinematography</h3><span class="mono t-xs gold">28%</span></div>
+            <p class="muted t-sm" style="margin:6px 0 12px">Next: Color temperature basics</p>
+            <div class="progress"><i style="width:28%"></i></div>
+            <div class="prog-modes" style="margin-top:12px"><span class="mode online">Online</span><span class="mode rec">Recorded</span></div>
+            <a href="lesson.html" class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">Continue</a>
+          </div>
+        </article>
+
+        <article class="card card-hover" style="overflow:hidden">
+          <div class="thumb" style="position:relative;aspect-ratio:16/9;overflow:hidden"><img src="assets/img/prog-editing.jpeg" style="width:100%;height:100%;object-fit:cover" alt="" /><span class="badge badge-new" style="position:absolute;top:12px;inset-inline-start:12px">Recorded</span></div>
+          <div class="card-pad">
+            <div class="row between"><h3 style="font-weight:600;font-size:var(--t-md)">Editing Foundations</h3><span class="mono t-xs gold">8%</span></div>
+            <p class="muted t-sm" style="margin:6px 0 12px">Self-paced · 14 lessons</p>
+            <div class="progress"><i style="width:8%"></i></div>
+            <div class="prog-modes" style="margin-top:12px"><span class="mode rec">Recorded</span></div>
+            <a href="lesson.html" class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">Start</a>
+          </div>
+        </article>
+      </div>
+
+      <h3 style="font-weight:600;font-size:var(--t-md);margin:32px 0 14px">Recorded library — learn at your pace</h3>
+      <div class="strip">
+        <a href="lesson.html" class="media-card"><div class="thumb"><img src="assets/img/prog-vfx.jpeg" alt="" /><div class="ov"><span class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></div></div><div class="body"><div style="font-weight:600;font-size:var(--t-sm)">VFX Crash Course</div><div class="muted t-xs">9 lessons · 2h 10m</div></div></a>
+        <a href="lesson.html" class="media-card"><div class="thumb"><img src="assets/img/prog-script.jpeg" alt="" /><div class="ov"><span class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></div></div><div class="body"><div style="font-weight:600;font-size:var(--t-sm)">Story Structure 101</div><div class="muted t-xs">6 lessons · 1h 25m</div></div></a>
+        <a href="lesson.html" class="media-card"><div class="thumb"><img src="assets/img/show-3.jpeg" alt="" /><div class="ov"><span class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></div></div><div class="body"><div style="font-weight:600;font-size:var(--t-sm)">Directing Actors</div><div class="muted t-xs">5 lessons · 1h 02m</div></div></a>
+        <a href="lesson.html" class="media-card"><div class="thumb"><img src="assets/img/prog-cinematography.jpeg" alt="" /><div class="ov"><span class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span></div></div><div class="body"><div style="font-weight:600;font-size:var(--t-sm)">Lenses Explained</div><div class="muted t-xs">7 lessons · 1h 40m</div></div></a>
+      </div>
+    </main>
+  </div></div>
+</div>
+<nav class="tabbar" data-tabbar></nav>
+<div data-palette-host></div>
+<script src="assets/js/shell.js"></script><script src="assets/js/i18n.js"></script><script src="assets/js/main.js"></script>
+<script>document.querySelectorAll('[data-tabs2] button').forEach(b=>b.addEventListener('click',()=>{b.parentElement.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');}));
+document.querySelectorAll('.toolbar .chip').forEach(c=>c.addEventListener('click',()=>{document.querySelectorAll('.toolbar .chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');}));</script>
+</body>
+</html>

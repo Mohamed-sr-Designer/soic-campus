@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Messages · SOIC Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" /><link rel="stylesheet" href="assets/css/base.css" /><link rel="stylesheet" href="assets/css/components.css" /><link rel="stylesheet" href="assets/css/app.css" /><link rel="stylesheet" href="assets/css/community.css" />
+<style>
+.dm { display:grid; grid-template-columns:300px 1fr; height:calc(100vh - var(--topbar)); }
+.dm-list { border-inline-end:1px solid var(--border); overflow-y:auto; background:var(--bg-850); }
+.dm-list .s { padding:12px 14px; border-bottom:1px solid var(--border); }
+.dm-row { display:flex; gap:12px; padding:12px 14px; cursor:pointer; border-bottom:1px solid var(--border); align-items:center; }
+.dm-row:hover, .dm-row.active { background:var(--surface-hover); }
+.dm-row .bd{flex:1;min-width:0;} .dm-row .bd .n{font-size:var(--t-sm);font-weight:600;display:flex;justify-content:space-between;}
+.dm-row .bd .n span{font-weight:400;font-size:10px;color:var(--text-muted);font-family:var(--font-mono);}
+.dm-row .bd .p{font-size:var(--t-xs);color:var(--text-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+@media(max-width:760px){ .dm{grid-template-columns:1fr;} .dm-thread{display:none;} }
+</style>
+</head>
+<body class="grain" data-role="student" data-active="messages" data-title="Messages">
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="app">
+  <aside class="sidebar" data-sidebar></aside>
+  <div class="app-main"><div>
+    <header class="topbar" data-topbar></header>
+    <main id="main">
+      <div class="dm">
+        <div class="dm-list">
+          <div class="s"><div class="searchbox"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg> Search chats…</div></div>
+          <div class="dm-row active"><span class="avatar md" style="background:#1b1822;position:relative">MA<span class="presence online"></span></span><div class="bd"><div class="n">Dr. Mohamed Asser <span>now</span></div><div class="p">Great work on the mood study — let's talk lighting</div></div></div>
+          <div class="dm-row"><span class="avatar md" style="background:#2a2230">KS</span><div class="bd"><div class="n">Karim Said <span>12m</span></div><div class="p">🎙 Voice message (0:34)</div></div></div>
+          <div class="dm-row"><span class="avatar md" style="background:#22302a">Crew · Sand &amp; Static</span><div class="bd"><div class="n">Crew · Sand &amp; Static <span>1h</span></div><div class="p">Nour: call sheet for Saturday 👆</div></div></div>
+          <div class="dm-row"><span class="avatar md" style="background:#302226">RA</span><div class="bd"><div class="n">Rana Adel <span>3h</span></div><div class="p">You: sending the LUT now</div></div></div>
+        </div>
+        <div class="dm-thread chat">
+          <div class="chat-head"><span class="avatar sm" style="background:#1b1822;position:relative">MA<span class="presence online"></span></span><div class="title">Dr. Mohamed Asser</div><div class="topic">Instructor · Cinematography</div></div>
+          <div class="messages">
+            <div class="day-sep">Today</div>
+            <div class="msg"><span class="avatar md" style="background:#1b1822">MA</span><div class="grow"><div class="who"><span class="nm staff">Dr. Mohamed Asser</span><span class="ts">09:12</span></div><div class="text">Great work on the mood study — that falloff is exactly what I meant. 🔥</div></div></div>
+            <div class="msg" style="flex-direction:row-reverse;text-align:end"><span class="avatar md" style="background:linear-gradient(135deg,#2e2740,#181522)">LM</span><div class="grow"><div class="who" style="justify-content:flex-end"><span class="ts">09:14</span><span class="nm">You</span></div><div class="text">Thank you Dr.! Should I push the contrast even further for the next one?</div></div></div>
+            <div class="msg"><span class="avatar md" style="background:#1b1822">MA</span><div class="grow"><div class="who"><span class="nm staff">Dr. Mohamed Asser</span><span class="ts">09:16</span></div><div class="text">Yes — try a single practical and let half the face go dark. Bring it to live class tonight.</div><div class="reactions"><span class="react mine">👍 <span class="n">1</span></span></div></div></div>
+          </div>
+          <div class="typing"><span class="dots"><i></i><i></i><i></i></span> typing…</div>
+          <div class="composer"><div class="box"><button class="tool" aria-label="Attach"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 12.5 12.5 21a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8"/></svg></button><input placeholder="Message Dr. Asser" /><button class="tool" aria-label="Voice"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3zM19 10a7 7 0 0 1-14 0"/></svg></button><button class="send" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></button></div></div>
+        </div>
+      </div>
+    </main>
+  </div></div>
+</div>
+<nav class="tabbar" data-tabbar></nav>
+<div data-palette-host></div>
+<script src="assets/js/shell.js"></script><script src="assets/js/i18n.js"></script><script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apply · SOIC Campus</title>
+<meta name="description" content="Apply to SOIC — choose your diploma, your study mode (on-campus, live online, or recorded), and start your filmmaking journey." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="grain">
+<header class="nav scrolled">
+  <div class="wrap wrap-wide inner">
+    <a href="index.html" class="brand"><img src="assets/img/logo-soic.png" alt="SOIC" class="brand-logo" /></a>
+    <div class="actions" style="margin-inline-start:auto">
+      <button class="theme-toggle" data-theme-toggle aria-label="Theme"><span data-theme-label>☀</span></button>
+      <a href="login.html" class="btn btn-ghost btn-sm">Log in</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="section" style="padding-top:calc(var(--topbar) + 40px)">
+  <div class="wrap apply-wrap">
+    <div class="reveal" style="text-align:center;margin-bottom:36px">
+      <span class="kicker" style="justify-content:center">Admissions · Fall 2026 cohort</span>
+      <h1 class="display t-3xl" style="margin-top:14px">Apply to SOIC</h1>
+      <p class="soft" style="margin-top:10px">Seats are limited and reviewed in order. Takes about 4 minutes.</p>
+      <div class="steps" style="justify-content:center;margin-top:24px">
+        <div class="step active"><span class="n">1</span> Your details</div><div class="bar"></div>
+        <div class="step"><span class="n">2</span> Review</div><div class="bar"></div>
+        <div class="step"><span class="n">3</span> Done</div>
+      </div>
+    </div>
+
+    <form id="applyForm" class="card card-pad reveal" style="padding:clamp(20px,4vw,40px)">
+      <h3 style="font-weight:600;font-size:var(--t-md);margin-bottom:18px">1 · About you</h3>
+      <div class="form-grid">
+        <div class="field"><label>Full name *</label><input class="input" required placeholder="Your name" /></div>
+        <div class="field"><label>Email *</label><input class="input" type="email" required placeholder="you@email.com" /></div>
+        <div class="field"><label>Phone / WhatsApp *</label><input class="input" required placeholder="+20 …" /></div>
+        <div class="field"><label>Country / City</label><input class="input" placeholder="Cairo, Egypt" /></div>
+      </div>
+
+      <h3 style="font-weight:600;font-size:var(--t-md);margin:30px 0 14px">2 · Choose your diploma *</h3>
+      <div class="choice-grid">
+        <label class="choice"><input type="radio" name="program" value="Filmmaking" checked /> Filmmaking</label>
+        <label class="choice"><input type="radio" name="program" value="Cinematography" /> Cinematography</label>
+        <label class="choice"><input type="radio" name="program" value="Editing" /> Editing</label>
+        <label class="choice"><input type="radio" name="program" value="VFX" /> Visual Effects</label>
+        <label class="choice"><input type="radio" name="program" value="Script Writing" /> Script Writing</label>
+      </div>
+
+      <h3 style="font-weight:600;font-size:var(--t-md);margin:30px 0 14px">3 · How do you want to study? *</h3>
+      <div class="choice-grid">
+        <label class="choice"><input type="radio" name="mode" value="On-campus" checked /> 🎬 On-campus (Cairo)</label>
+        <label class="choice"><input type="radio" name="mode" value="Live online" /> 📡 Live online</label>
+        <label class="choice"><input type="radio" name="mode" value="Recorded" /> ⏺ Recorded / self-paced</label>
+      </div>
+
+      <h3 style="font-weight:600;font-size:var(--t-md);margin:30px 0 14px">4 · Your background</h3>
+      <div class="form-grid">
+        <div class="field"><label>Experience level</label><select class="select"><option>Complete beginner</option><option>Some experience</option><option>Working in the field</option></select></div>
+        <div class="field"><label>Showreel / portfolio link</label><input class="input" placeholder="YouTube, Vimeo, Drive… (optional)" /></div>
+        <div class="field full"><label>Why do you want to study film with SOIC?</label><textarea class="textarea" rows="4" placeholder="A few sentences about your goals…"></textarea></div>
+      </div>
+
+      <label class="row" style="gap:10px;margin-top:22px;font-size:var(--t-sm)"><input type="checkbox" required style="accent-color:var(--gold-500)" /> I agree to be contacted by SOIC admissions about my application.</label>
+
+      <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:24px">Submit application</button>
+      <p class="muted t-xs" style="text-align:center;margin-top:12px">Prefer to talk first? <a href="https://wa.me/201033666656" class="link">Message admissions on WhatsApp</a></p>
+    </form>
+
+    <div id="applyDone" class="card card-pad reveal hidden" style="text-align:center;padding:clamp(28px,5vw,56px)">
+      <div class="ico" style="width:76px;height:76px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;background:rgba(255,193,7,.12);border:1px solid var(--gold-500);color:var(--gold-400)"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2 class="display t-2xl">Application received 🎬</h2>
+      <p class="soft" style="margin:12px auto 0;max-width:42ch">Thank you, <b id="doneName">filmmaker</b>. Our admissions team reviews applications in order and will reach out within 3 working days about your <b id="doneProg">Filmmaking</b> diploma.</p>
+      <div class="row center" style="gap:12px;margin-top:26px"><a href="index.html" class="btn btn-ghost">Back to home</a><a href="login.html" class="btn btn-primary">Explore the campus</a></div>
+    </div>
+  </div>
+</main>
+
+<script src="assets/js/main.js"></script>
+<script>
+document.getElementById("applyForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const name = this.querySelector('input[placeholder="Your name"]').value || "filmmaker";
+  const prog = (this.querySelector('input[name="program"]:checked') || {}).value || "Filmmaking";
+  document.getElementById("doneName").textContent = name;
+  document.getElementById("doneProg").textContent = prog;
+  this.classList.add("hidden");
+  const done = document.getElementById("applyDone");
+  done.classList.remove("hidden"); done.classList.add("in");
+  document.querySelectorAll(".steps .step").forEach(s => s.classList.add("done"));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+</body>
+</html>

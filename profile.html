@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Account · SOIC Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" /><link rel="stylesheet" href="assets/css/base.css" /><link rel="stylesheet" href="assets/css/components.css" /><link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="grain" data-role="student" data-active="profile" data-title="My Account">
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="app">
+  <aside class="sidebar" data-sidebar></aside>
+  <div class="app-main"><div>
+    <header class="topbar" data-topbar></header>
+    <main id="main" class="app-body" style="max-width:1080px">
+
+      <!-- profile header -->
+      <div class="card" style="overflow:hidden;margin-bottom:24px">
+        <div style="height:120px;background:var(--grad-stage);position:relative"></div>
+        <div class="card-pad" style="display:flex;gap:20px;align-items:flex-end;margin-top:-46px;flex-wrap:wrap">
+          <span class="avatar" style="width:92px;height:92px;font-size:30px;border:3px solid var(--surface);background:linear-gradient(135deg,#2e2740,#181522)">LM</span>
+          <div style="flex:1;min-width:200px">
+            <h1 class="display t-xl" style="line-height:1">Layla Mansour</h1>
+            <p class="muted t-sm" style="margin-top:4px">Filmmaking Diploma · Cohort F-26 · Cairo, Egypt</p>
+            <a href="#" class="link t-sm mono">soic.film/@layla</a>
+          </div>
+          <div class="row" style="gap:10px"><a href="portfolio.html" class="btn btn-ghost btn-sm">View public profile</a><button class="btn btn-primary btn-sm">Edit profile</button></div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+        <!-- account info -->
+        <section class="card card-pad col-7">
+          <h3 style="font-weight:600;font-size:var(--t-md);margin-bottom:16px">Account information</h3>
+          <div class="form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label>Full name</label><input class="input" value="Layla Mansour" /></div>
+            <div class="field"><label>Email</label><input class="input" value="layla@soic.edu" /></div>
+            <div class="field"><label>Phone</label><input class="input" value="+20 100 000 0000" /></div>
+            <div class="field"><label>Country</label><input class="input" value="Egypt" /></div>
+            <div class="field" style="grid-column:1/-1"><label>Bio</label><textarea class="textarea" rows="3">Aspiring director from Cairo. Drawn to intimate character studies and natural light.</textarea></div>
+          </div>
+          <div class="row" style="gap:10px;margin-top:16px"><button class="btn btn-primary btn-sm">Save changes</button><button class="btn btn-quiet btn-sm">Cancel</button></div>
+        </section>
+
+        <!-- skills + status -->
+        <aside class="col-5 stack">
+          <div class="card card-pad">
+            <h3 style="font-weight:600;font-size:var(--t-md);margin-bottom:12px">Skills</h3>
+            <div class="row row-wrap" style="gap:8px"><span class="chip">Directing</span><span class="chip">Lighting</span><span class="chip">Color</span><span class="chip">Editing</span><span class="chip">Storyboarding</span><span class="chip" style="border-style:dashed">+ Add</span></div>
+          </div>
+          <div class="card card-pad">
+            <div class="tile-h" style="margin-bottom:6px">Enrollment</div>
+            <div class="row between"><span class="t-sm">Status</span><span class="badge badge-gold">Active</span></div>
+            <div class="row between" style="margin-top:10px"><span class="t-sm">Program progress</span><span class="mono t-sm gold">37%</span></div>
+            <div class="progress" style="margin-top:8px"><i style="width:37%"></i></div>
+          </div>
+        </aside>
+
+        <!-- certificates -->
+        <section class="card card-pad col-12">
+          <div class="row between" style="margin-bottom:16px"><h3 style="font-weight:600;font-size:var(--t-md)">My certificates</h3><span class="badge">Accredited · Syndicate of Cinematic Professions</span></div>
+          <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px">
+            <div class="cert-card">
+              <span class="cert-seal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.5 17 22l-5-3-5 3 1.5-9.5"/></svg></span>
+              <div style="flex:1"><div style="font-weight:600;font-size:var(--t-sm)">Editing Foundations</div><div class="muted t-xs">Issued Mar 2026 · ID SOIC-ED-2261</div></div>
+              <button class="btn btn-ghost btn-sm">Download</button>
+            </div>
+            <div class="cert-card">
+              <span class="cert-seal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="6"/><path d="M15.5 12.5 17 22l-5-3-5 3 1.5-9.5"/></svg></span>
+              <div style="flex:1"><div style="font-weight:600;font-size:var(--t-sm)">Cinematography · Level 1</div><div class="muted t-xs">Issued Jan 2026 · ID SOIC-CN-2104</div></div>
+              <button class="btn btn-ghost btn-sm">Download</button>
+            </div>
+            <div class="cert-card" style="opacity:.6">
+              <span class="cert-seal" style="background:var(--bg-700);border-color:var(--border);color:var(--ink-3)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+              <div style="flex:1"><div style="font-weight:600;font-size:var(--t-sm)">Filmmaking Diploma</div><div class="muted t-xs">In progress · unlocks at 100%</div></div>
+              <span class="due soon">37%</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div style="margin-top:24px"><a href="login.html" class="btn btn-ghost btn-sm" onclick="try{localStorage.removeItem('soic-auth');localStorage.removeItem('soic-role')}catch(e){}">Log out</a></div>
+    </main>
+  </div></div>
+</div>
+<nav class="tabbar" data-tabbar></nav>
+<div data-palette-host></div>
+<script src="assets/js/shell.js"></script><script src="assets/js/i18n.js"></script><script src="assets/js/main.js"></script>
+</body>
+</html>

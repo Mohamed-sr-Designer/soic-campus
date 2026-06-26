@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard · SOIC Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="grain" data-role="student" data-active="dashboard" data-title="Dashboard">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="app has-rail">
+  <aside class="sidebar" data-sidebar></aside>
+  <div class="app-main">
+    <div>
+      <header class="topbar" data-topbar></header>
+      <main id="main" class="app-body">
+        <div class="page-head row between row-wrap" style="gap:16px">
+          <div>
+            <h1 class="greet"><span data-i18n="dash.greet">Good evening</span>, Layla <span class="wave">🎬</span></h1>
+            <p class="muted t-sm" style="margin-top:6px">Filmmaking Diploma · Cohort F-26 · Week 9 of 24</p>
+          </div>
+          <div class="row" style="gap:10px">
+            <span class="badge badge-gold">🔥 14-day streak</span>
+            <span class="badge">Thu · 26 Jun</span>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <section class="continue col-8 reveal-rise">
+            <div class="bg"><img src="assets/img/show-1.jpeg" alt="" /></div>
+            <span class="label" data-i18n="dash.continue">Continue · Module 3 — Light &amp; Shadow</span>
+            <h3 class="display">Lighting for Mood: The Single-Source Setup</h3>
+            <p class="lesson-meta">Dr. Mohamed Asser · Lesson 4 of 7 · 12 min remaining</p>
+            <div class="ctl">
+              <a href="lesson.html" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg> <span data-i18n="dash.resume">Resume lesson</span></a>
+              <div class="progress" style="flex:1;max-width:240px"><i style="width:62%"></i></div>
+              <span class="mono muted t-xs">62%</span>
+            </div>
+          </section>
+
+          <aside class="col-4 stack">
+            <div class="live-card">
+              <div class="row between"><span class="badge badge-live badge-dot">Live in 2h 10m</span></div>
+              <h3 class="display t-lg" style="margin:12px 0 4px">Color Grading Masterclass</h3>
+              <p class="muted t-sm">Dr. Yehia Fahmy · Live Stage 1</p>
+              <div class="row" style="margin-top:14px;gap:8px">
+                <div class="avatar-stack">
+                  <span class="avatar sm" style="background:#2a2230">RA</span>
+                  <span class="avatar sm" style="background:#22302a">KS</span>
+                  <span class="avatar sm" style="background:#302a22">NH</span>
+                </div>
+                <span class="muted t-xs">+38 attending</span>
+              </div>
+              <a href="live.html" class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">Set reminder</a>
+            </div>
+            <div class="tile">
+              <div class="tile-h">Program progress <span class="mono t-xs gold">37%</span></div>
+              <div class="row" style="gap:16px;margin-top:6px">
+                <div class="ring" style="--p:37"><span>37%</span></div>
+                <div><div class="big" style="font-size:var(--t-lg)">9 / 24</div><div class="muted t-xs">weeks complete</div></div>
+              </div>
+            </div>
+          </aside>
+
+          <a href="assignments.html" class="tile col-3 reveal-rise"><div class="tile-h">Attendance</div><div class="big">96%</div><div class="delta">▲ 4% this month</div></a>
+          <a href="assignments.html" class="tile col-3 reveal-rise"><div class="tile-h">Assignments</div><div class="big">3 <span class="muted t-sm">due</span></div><div class="delta down">1 due tomorrow</div></a>
+          <a href="portfolio.html" class="tile col-3 reveal-rise"><div class="tile-h">Portfolio pieces</div><div class="big">7</div><div class="delta">▲ 2 added this week</div></a>
+          <div class="tile col-3 reveal-rise"><div class="tile-h">Cohort rank</div><div class="big">#4 <span class="muted t-sm">of 42</span></div><div class="delta">▲ up 2 places</div></div>
+
+          <section class="card card-pad col-7">
+            <div class="row between" style="margin-bottom:8px"><h3 style="font-family:var(--font-ui);font-weight:600;font-size:var(--t-md)" data-i18n="dash.upnext">Up next in your program</h3><a href="courses.html" class="link t-sm">View curriculum</a></div>
+            <a href="lesson.html" class="row-item"><span class="lead"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><div class="grow"><div class="t">Lighting for Mood: The Single-Source Setup</div><div class="s">Module 3 · 12 min left</div></div><span class="due soon">Resume</span></a>
+            <a href="lesson.html" class="row-item"><span class="lead"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><div class="grow"><div class="t">Practical: Three-Point Lighting on a Budget</div><div class="s">Module 3 · 24 min</div></div><span class="due">Locked soon</span></a>
+            <a href="assignments.html" class="row-item"><span class="lead"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><div class="grow"><div class="t">Assignment: Shoot a mood study (30s)</div><div class="s">Module 3 · graded</div></div><span class="due urgent">Due Fri</span></a>
+          </section>
+
+          <section class="card card-pad col-5">
+            <h3 style="font-family:var(--font-ui);font-weight:600;font-size:var(--t-md);margin-bottom:8px" data-i18n="dash.deadlines">Deadlines</h3>
+            <a href="assignments.html" class="row-item"><span class="lead" style="color:var(--film)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="grow"><div class="t">Mood study — 30s film</div><div class="s">Cinematography · critique by Dr. Asser</div></div><span class="due urgent">Tomorrow</span></a>
+            <a href="assignments.html" class="row-item"><span class="lead"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="grow"><div class="t">Script draft — Act I</div><div class="s">Script Writing elective</div></div><span class="due soon">3 days</span></a>
+            <a href="projects.html" class="row-item"><span class="lead"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span><div class="grow"><div class="t">Crew sign-up: Grad film</div><div class="s">Production teams forming</div></div><span class="due">1 week</span></a>
+          </section>
+
+          <section class="card card-pad col-8">
+            <div class="row between" style="margin-bottom:6px"><h3 style="font-family:var(--font-ui);font-weight:600;font-size:var(--t-md)" data-i18n="dash.spaces">From your spaces</h3><a href="community.html" class="link t-sm">Open community</a></div>
+            <div class="feed-item"><span class="avatar sm" style="background:#2a2230">KS</span><div class="body"><div class="head"><b>Karim Said</b> in <span class="ch"># cohort-f26</span></div><div class="txt">Anyone free to grip on Saturday's shoot? Need one more hand on the dolly 🎥</div><div class="when">12m ago · 4 replies</div></div></div>
+            <div class="feed-item"><span class="avatar sm" style="background:#22302a">DA</span><div class="body"><div class="head"><b>Dr. Adel Al-Aasar</b> in <span class="ch"># announcements</span></div><div class="txt">📣 Guest masterclass next week — a working DoP from Film Clinic. Details on the events page.</div><div class="when">1h ago · 22 reactions</div></div></div>
+            <div class="feed-item"><span class="avatar sm" style="background:#302226">NH</span><div class="body"><div class="head"><b>Nour Hassan</b> in <span class="ch"># directors-club</span></div><div class="txt">Posted a new rough cut of "Sand &amp; Static" — would love notes on the second act pacing.</div><div class="when">3h ago · 9 replies</div></div></div>
+          </section>
+
+          <a href="profile.html" class="card card-pad col-4" style="background:var(--grad-stage)">
+            <span class="kicker">Your public profile</span>
+            <h3 class="display t-lg" style="margin:12px 0 6px">soic.film/@layla</h3>
+            <p class="muted t-sm">7 pieces published. Your mood study will auto-add once graded.</p>
+            <div class="progress" style="margin-top:14px"><i style="width:70%"></i></div>
+            <p class="mono t-xs muted" style="margin-top:8px">Profile 70% complete — add a reel to reach 100%</p>
+            <span class="btn btn-ghost btn-sm btn-block" style="margin-top:14px">Edit portfolio</span>
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <aside class="rail">
+      <div>
+        <h4 data-i18n="rail.today">Today's stage</h4>
+        <div class="stack">
+          <div class="row" style="gap:12px"><div class="ring" style="--size:42px;--w:4px;--p:100"><span style="font-size:9px">2h</span></div><div><div class="t-sm" style="font-weight:500">Color Grading</div><div class="muted t-xs">18:00 · Dr. Fahmy</div></div></div>
+          <div class="row" style="gap:12px"><div class="ring" style="--size:42px;--w:4px;--p:0;background:conic-gradient(var(--bg-600) 0,var(--bg-600))"><span style="font-size:9px;color:var(--ink-3)">—</span></div><div><div class="t-sm" style="font-weight:500">Screenwriters' lab</div><div class="muted t-xs">Tomorrow · 16:00</div></div></div>
+        </div>
+      </div>
+      <hr class="divider" />
+      <div>
+        <h4 data-i18n="rail.online">Online now · cohort</h4>
+        <div class="row row-wrap" style="gap:8px">
+          <span class="avatar sm" style="background:#2a2230;position:relative">KS<span class="presence online"></span></span>
+          <span class="avatar sm" style="background:#22302a;position:relative">DA<span class="presence online"></span></span>
+          <span class="avatar sm" style="background:#302226;position:relative">NH<span class="presence away"></span></span>
+          <span class="avatar sm" style="background:#26302a;position:relative">RA<span class="presence online"></span></span>
+          <span class="avatar sm" style="background:#2e2a36;position:relative;color:var(--text-muted)">+9</span>
+        </div>
+      </div>
+      <hr class="divider" />
+      <div>
+        <h4 data-i18n="rail.goal">This week's goal</h4>
+        <div class="tile" style="padding:14px">
+          <div class="tile-h">Finish Module 3</div>
+          <div class="progress" style="margin:10px 0 8px"><i style="width:62%"></i></div>
+          <div class="muted t-xs">3 of 7 lessons · keep your streak alive 🔥</div>
+        </div>
+      </div>
+      <hr class="divider" />
+      <div>
+        <h4 data-i18n="rail.ai">AI study buddy</h4>
+        <div class="ai-summary">
+          <span class="tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/></svg> Suggested</span>
+          <p class="t-sm soft">You're spending less time on lighting exercises this week. Want a 5-min recap quiz before tonight's class?</p>
+          <button class="btn btn-ghost btn-sm" style="margin-top:12px">Generate quiz</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<nav class="tabbar" data-tabbar></nav>
+<div data-palette-host></div>
+
+<script src="assets/js/shell.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

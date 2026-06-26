@@ -1,0 +1,162 @@
+/* ============================================================
+   SOIC NOIR — Design Tokens
+   The single source of truth. Film-grade dark, warm-gold key light.
+   Light theme mirrors the same hues on paper. RTL-aware.
+   ============================================================ */
+
+:root {
+  /* ---- Color: Dark (default) — charcoal-navy theatre (subtle blue, not saturated) ---- */
+  --bg-900: #070810;   /* deepest, page base */
+  --bg-850: #0A0C14;
+  --bg-800: #0D0F18;   /* primary surface */
+  --bg-750: #11131D;
+  --bg-700: #161924;   /* raised cards */
+  --bg-650: #1C1F2C;
+  --bg-600: #242836;   /* hover / inputs */
+  --line:   #262A38;   /* hairline border */
+  --line-strong: #353A4B;
+
+  --ink-0: #F5F6F8;    /* primary text */
+  --ink-1: #BCC0CC;    /* secondary */
+  --ink-2: #82869A;    /* muted / captions */
+  --ink-3: #565A6C;    /* faint / disabled */
+
+  /* Brand — SOIC amber key light (#FFC107) */
+  --gold-600: #E0A500;
+  --gold-500: #FFC107; /* primary action — SOIC amber */
+  --gold-400: #FFD24A; /* highlight / focus */
+  --gold-300: #FFE08A;
+  --gold-glow: rgba(255, 193, 7, 0.26);
+
+  /* Accents */
+  --film:    #E5142A;  /* live / record / urgent — SOIC logo red */
+  --film-dim:#7a1019;
+  --cool:    #5B8DEF;  /* links / info */
+  --teal:    #34D8B4;
+  --violet:  #9F7BEA;
+
+  --success: #3DD68C;
+  --warning: #E6A23C;
+  --danger:  #E5484D;
+
+  /* Semantic surfaces */
+  --surface:        var(--bg-800);
+  --surface-raised: var(--bg-700);
+  --surface-hover:  var(--bg-600);
+  --text:           var(--ink-0);
+  --text-soft:      var(--ink-1);
+  --text-muted:     var(--ink-2);
+  --border:         var(--line);
+  --accent:         var(--gold-500);
+  --accent-hi:      var(--gold-400);
+  --on-accent:      #14193A;
+
+  /* Gradients & atmosphere */
+  --grad-gold:  linear-gradient(135deg, var(--gold-400) 0%, var(--gold-600) 100%);
+  --grad-spot:  radial-gradient(120% 120% at 80% -10%, rgba(255,193,7,.14), transparent 55%);
+  --grad-film:  linear-gradient(180deg, transparent 0%, rgba(7,8,16,.55) 55%, var(--bg-900) 100%);
+  --grad-stage: radial-gradient(140% 100% at 50% 0%, #161924 0%, #0b0c14 48%, var(--bg-900) 100%);
+
+  /* ---- Typography — Bebas Neue display (SOIC brand) + IBM Plex ---- */
+  --font-display: "Bebas Neue", "Tajawal", "Oswald", Impact, sans-serif;
+  --font-ar-display: "Tajawal", "IBM Plex Sans Arabic", sans-serif;
+  --font-ui: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+  --font-ar: "IBM Plex Sans Arabic", "Tajawal", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Type scale — 1.25 major third, fluid */
+  --t-xs:  clamp(.69rem, .67rem + .1vw, .75rem);
+  --t-sm:  clamp(.8rem, .77rem + .15vw, .875rem);
+  --t-base: clamp(.94rem, .9rem + .2vw, 1rem);
+  --t-md:  clamp(1.05rem, 1rem + .35vw, 1.25rem);
+  --t-lg:  clamp(1.3rem, 1.15rem + .7vw, 1.75rem);
+  --t-xl:  clamp(1.7rem, 1.4rem + 1.5vw, 2.6rem);
+  --t-2xl: clamp(2.3rem, 1.7rem + 3vw, 4rem);
+  --t-3xl: clamp(3rem, 1.9rem + 5.4vw, 6.5rem);
+  --t-hero: clamp(3.4rem, 1.6rem + 8vw, 9rem);
+
+  --lh-tight: 1.04;
+  --lh-snug: 1.22;
+  --lh-base: 1.62;
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.16em;
+  --tracking-caps: 0.28em;
+
+  /* ---- Spacing (8pt) ---- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px; --s-11: 180px;
+
+  /* ---- Radius ---- */
+  --r-1: 4px; --r-2: 8px; --r-3: 14px; --r-4: 22px; --r-5: 30px;
+  --r-full: 999px;
+
+  /* ---- Shadow (warm, layered) ---- */
+  --sh-1: 0 1px 2px rgba(0,0,0,.4);
+  --sh-2: 0 4px 16px rgba(0,0,0,.45);
+  --sh-3: 0 18px 50px -12px rgba(0,0,0,.7);
+  --sh-4: 0 40px 90px -20px rgba(0,0,0,.8);
+  --sh-glow: 0 0 0 1px rgba(226,193,112,.35), 0 0 40px -6px var(--gold-glow);
+  --ring: 0 0 0 2px var(--bg-900), 0 0 0 4px var(--gold-400);
+
+  /* ---- Motion — "film" easing ---- */
+  --ease: cubic-bezier(.22, 1, .36, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --d-1: 120ms; --d-2: 200ms; --d-3: 320ms; --d-4: 560ms; --d-5: 900ms;
+
+  /* ---- Layout ---- */
+  --max: 1280px;
+  --max-wide: 1480px;
+  --sidebar: 264px;
+  --topbar: 64px;
+  --rail: 320px;
+  --gutter: clamp(20px, 5vw, 64px);
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   LIGHT THEME — "Daylight" — paper white, ink black, same gold
+   ============================================================ */
+[data-theme="light"] {
+  --bg-900: #ECEDF0;
+  --bg-850: #F0F1F4;
+  --bg-800: #F6F7F9;
+  --bg-750: #FAFBFC;
+  --bg-700: #FFFFFF;
+  --bg-650: #F7F8FA;
+  --bg-600: #ECEEF1;
+  --line:   #E2E4EA;
+  --line-strong: #CCCFD8;
+
+  --ink-0: #14161D;
+  --ink-1: #3C404B;
+  --ink-2: #6A6E7A;
+  --ink-3: #9CA0AC;
+
+  --gold-600: #B8860B;
+  --gold-500: #E0A500;
+  --gold-400: #C9920F;
+  --gold-glow: rgba(224, 165, 0, 0.20);
+  --on-accent: #14193A;
+
+  --grad-spot: radial-gradient(120% 120% at 80% -10%, rgba(224,165,0,.12), transparent 55%);
+  --grad-stage: radial-gradient(140% 100% at 50% 0%, #f4f5f8 0%, #ecedf0 45%, var(--bg-900) 100%);
+
+  --sh-2: 0 4px 18px rgba(20,22,29,.08);
+  --sh-3: 0 18px 50px -16px rgba(20,22,29,.14);
+  --sh-4: 0 40px 90px -24px rgba(20,22,29,.18);
+
+  color-scheme: light;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

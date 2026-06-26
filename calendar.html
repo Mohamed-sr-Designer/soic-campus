@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calendar · SOIC Campus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" /><link rel="stylesheet" href="assets/css/base.css" /><link rel="stylesheet" href="assets/css/components.css" /><link rel="stylesheet" href="assets/css/app.css" />
+</head>
+<body class="grain" data-role="student" data-active="calendar" data-title="Calendar">
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="app">
+  <aside class="sidebar" data-sidebar></aside>
+  <div class="app-main"><div>
+    <header class="topbar" data-topbar></header>
+    <main id="main" class="app-body" style="max-width:1180px">
+      <div class="ph row between"><div><h1 id="calTitle">Calendar</h1><p>Live classes, deadlines and campus events — all in one place.</p></div>
+      <div class="row" style="gap:8px"><span class="badge"><span style="width:8px;height:8px;border-radius:2px;background:#9db8f5;display:inline-block;margin-inline-end:6px"></span>Live</span><span class="badge"><span style="width:8px;height:8px;border-radius:2px;background:var(--gold-400);display:inline-block;margin-inline-end:6px"></span>Deadline</span></div></div>
+      <div class="cal">
+        <div class="cal-head"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+    </main>
+  </div></div>
+</div>
+<nav class="tabbar" data-tabbar></nav>
+<div data-palette-host></div>
+<script src="assets/js/shell.js"></script><script src="assets/js/i18n.js"></script><script src="assets/js/main.js"></script>
+<script>
+(function(){
+  const now=new Date(); const y=now.getFullYear(), m=now.getMonth();
+  const months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  document.getElementById('calTitle').textContent=months[m]+' '+y;
+  const first=new Date(y,m,1).getDay(); const days=new Date(y,m+1,0).getDate(); const prevDays=new Date(y,m,0).getDate();
+  const today=now.getDate();
+  const events={};
+  const set=(d,t,cls)=>{(events[d]=events[d]||[]).push({t,cls});};
+  set(today,'Color Grading · 18:00','live'); set(today,'Mood study due','due');
+  set(Math.min(today+1,days),'Screenwriters\' Lab','live'); set(Math.min(today+3,days),'Script draft due','due');
+  set(Math.min(today+2,days),'Camera workshop','live'); set(Math.min(today+5,days),'Crew sign-up','due');
+  set(Math.max(today-3,1),'Lighting seminar',''); set(Math.min(today+7,days),'Guest masterclass','live');
+  let html='';
+  for(let i=first-1;i>=0;i--) html+=`<div class="cal-cell off"><div class="d">${prevDays-i}</div></div>`;
+  for(let d=1;d<=days;d++){
+    const evs=(events[d]||[]).map(e=>`<div class="cal-ev ${e.cls}">${e.t}</div>`).join('');
+    html+=`<div class="cal-cell ${d===today?'today':''}"><div class="d">${d}</div>${evs}</div>`;
+  }
+  const total=first+days; const tail=(7-(total%7))%7;
+  for(let i=1;i<=tail;i++) html+=`<div class="cal-cell off"><div class="d">${i}</div></div>`;
+  document.getElementById('calGrid').innerHTML=html;
+})();
+</script>
+</body>
+</html>

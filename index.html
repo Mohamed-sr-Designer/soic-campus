@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SOIC — The Digital Cinema Campus of the Middle East</title>
+<meta name="description" content="SOIC is the #1 cinema school in the Middle East — a full digital campus where you learn from masters, produce real films, and join the region's strongest filmmaking community. Diplomas in Filmmaking, Cinematography, Editing, VFX & Script Writing — on-campus, live online & recorded." />
+<meta property="og:title" content="SOIC — The Digital Cinema Campus of the Middle East" />
+<meta property="og:description" content="Learn. Create. Inspire. The entire filmmaking journey, in one cinematic platform." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tajawal:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
+<link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body class="grain">
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="wrap wrap-wide inner">
+    <a href="index.html" class="brand" aria-label="SOIC home">
+      <img src="assets/img/logo-soic.png" alt="SOIC — School of Cinema" class="brand-logo" />
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#programs" data-i18n="nav.programs">Programs</a>
+      <a href="#campus" data-i18n="nav.campus">The Campus</a>
+      <a href="#motion">In motion</a>
+      <a href="#faculty" data-i18n="nav.faculty">Faculty</a>
+      <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
+      <a href="apply.html" data-i18n="nav.admissions">Admissions</a>
+    </nav>
+    <div class="actions">
+      <button class="lang-toggle" data-lang-toggle aria-label="Switch language"><span data-lang-label>ع</span></button>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"><span data-theme-label>☀</span></button>
+      <a href="login.html" class="btn btn-ghost btn-sm" data-i18n="nav.login">Log in</a>
+      <a href="apply.html" class="btn btn-primary btn-sm" data-i18n="nav.apply">Apply now</a>
+      <button class="lang-toggle nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="nav-drawer" data-nav-drawer>
+  <a href="#programs" data-i18n="nav.programs">Programs</a>
+  <a href="#campus" data-i18n="nav.campus">The Campus</a>
+  <a href="#motion">In motion</a>
+  <a href="#faculty" data-i18n="nav.faculty">Faculty</a>
+  <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
+  <a href="#students">Students</a>
+  <a href="apply.html" data-i18n="nav.admissions">Admissions</a>
+  <a href="login.html" class="btn btn-ghost btn-block" style="margin-top:16px" data-i18n="nav.login">Log in</a>
+  <a href="apply.html" class="btn btn-primary btn-block" data-i18n="nav.apply">Apply now</a>
+</div>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero letterbox is-centered">
+  <div class="hero-bg">
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/img/show-4.jpeg">
+      <source src="assets/video/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-scrim"></div>
+  </div>
+  <div class="hero-grid"></div>
+  <div class="wrap wrap-wide">
+    <div class="hero-meta reveal">
+      <span class="kicker" data-i18n="hero.kicker">The #1 Cinema School in the Middle East</span>
+    </div>
+    <h1 class="display reveal" data-i18n="hero.title">Where passion is<br>directed into <em>cinema</em>.</h1>
+    <p class="sub reveal" data-i18n="hero.sub">Not another online course. A full digital campus where you learn from masters, build real films, and join the region's strongest filmmaking community — all in one room.</p>
+    <div class="cta-row reveal">
+      <a href="apply.html" class="btn btn-primary btn-lg" data-i18n="hero.cta1">Explore programs</a>
+      <a href="#campus" class="btn btn-ghost btn-lg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none"/></svg>
+        <span data-i18n="hero.cta2">Tour the campus</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-cue reveal"><span data-i18n="hero.scroll">Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ===================== STATS (under hero) ===================== -->
+<section class="section tight section--panel">
+  <div class="wrap wrap-wide">
+    <div class="grid" data-stagger style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));text-align:center">
+      <div class="stat"><div class="num"><em data-count="25" data-suffix="k+">0</em></div><div class="lbl" data-i18n="stats.students">Students</div></div>
+      <div class="stat"><div class="num"><em data-count="120" data-suffix="+">0</em></div><div class="lbl" data-i18n="stats.courses">Courses</div></div>
+      <div class="stat"><div class="num"><em data-count="300" data-suffix="+">0</em></div><div class="lbl" data-i18n="stats.films">Student films</div></div>
+      <div class="stat"><div class="num"><em data-count="30" data-suffix="+">0</em></div><div class="lbl" data-i18n="stats.instructors">Instructors</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROGRAMS ===================== -->
+<section class="section" id="programs">
+  <div class="wrap wrap-wide">
+    <div class="sec-head center reveal">
+      <span class="kicker" data-i18n="programs.kicker">Six-month diplomas</span>
+      <h2 class="display t-3xl" data-i18n="programs.title">Master a craft, end&nbsp;to&nbsp;end.</h2>
+      <p class="soft" data-i18n="programs.sub">Five disciplines. One cohort. Real films in your portfolio by graduation.</p>
+      <div class="delivery-modes reveal">
+        <span class="dm"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg> <b data-i18n="modes.campus">On-campus</b> · Cairo studios</span>
+        <span class="dm"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg> <b data-i18n="modes.online">Live online</b> · join from anywhere</span>
+        <span class="dm"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><polygon points="6 4 20 12 6 20 6 4"/></svg> <b data-i18n="modes.recorded">Recorded</b> · learn at your pace</span>
+      </div>
+    </div>
+    <div class="programs-grid" data-stagger>
+      <a class="media-card program-card" href="apply.html">
+        <div class="thumb"><img src="assets/img/prog-filmmaking.jpeg" alt="Filmmaking Diploma" loading="lazy" /><div class="ov"><span class="badge badge-gold">Flagship</span></div></div>
+        <div class="body"><h3>Filmmaking</h3><p class="muted t-sm">Learn the art of storytelling — from script to screen, directing real productions.</p><div class="meta"><span data-i18n="programs.duration">6 months</span><span data-i18n="programs.level">All levels</span></div><div class="prog-modes"><span class="mode on">On-campus</span><span class="mode online">Online</span><span class="mode rec">Recorded</span></div></div>
+      </a>
+      <a class="media-card program-card" href="apply.html">
+        <div class="thumb"><img src="assets/img/prog-cinematography.jpeg" alt="Cinematography Diploma" loading="lazy" /></div>
+        <div class="body"><h3>Cinematography</h3><p class="muted t-sm">Master the camera, lensing and light — paint emotion with the moving image.</p><div class="meta"><span data-i18n="programs.duration">6 months</span><span data-i18n="programs.level">All levels</span></div><div class="prog-modes"><span class="mode on">On-campus</span><span class="mode online">Online</span><span class="mode rec">Recorded</span></div></div>
+      </a>
+      <a class="media-card program-card" href="apply.html">
+        <div class="thumb"><img src="assets/img/prog-editing.jpeg" alt="Editing Diploma" loading="lazy" /></div>
+        <div class="body"><h3>Editing</h3><p class="muted t-sm">Edit with rhythm, emotion and impact — the invisible art that makes the film.</p><div class="meta"><span data-i18n="programs.duration">6 months</span><span data-i18n="programs.level">All levels</span></div><div class="prog-modes"><span class="mode on">On-campus</span><span class="mode online">Online</span><span class="mode rec">Recorded</span></div></div>
+      </a>
+      <a class="media-card program-card" href="apply.html">
+        <div class="thumb"><img src="assets/img/prog-vfx.jpeg" alt="VFX Diploma" loading="lazy" /><div class="ov"><span class="badge badge-new badge-dot">In demand</span></div></div>
+        <div class="body"><h3>Visual Effects</h3><p class="muted t-sm">Bring imagination to life — compositing, CG and the magic beyond the lens.</p><div class="meta"><span data-i18n="programs.duration">6 months</span><span data-i18n="programs.level">All levels</span></div><div class="prog-modes"><span class="mode on">On-campus</span><span class="mode online">Online</span><span class="mode rec">Recorded</span></div></div>
+      </a>
+      <a class="media-card program-card" href="apply.html">
+        <div class="thumb"><img src="assets/img/prog-script.jpeg" alt="Script Writing Diploma" loading="lazy" /></div>
+        <div class="body"><h3>Script Writing</h3><p class="muted t-sm">Write stories that connect and inspire — structure, character and the blank page.</p><div class="meta"><span data-i18n="programs.duration">6 months</span><span data-i18n="programs.level">All levels</span></div><div class="prog-modes"><span class="mode on">On-campus</span><span class="mode online">Online</span><span class="mode rec">Recorded</span></div></div>
+      </a>
+      <a class="card card-pad card-hover" href="apply.html" style="display:flex;flex-direction:column;justify-content:center;gap:14px;background:var(--grad-stage)">
+        <span class="kicker">Not sure yet?</span>
+        <h3 class="display t-lg">Find your craft</h3>
+        <p class="muted t-sm">Take the 2-minute pathway quiz and we'll point you to the right diploma.</p>
+        <span class="link" style="margin-top:6px">Start the quiz →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CAMPUS / ONE PLATFORM ===================== -->
+<section class="section section--panel spotlight" id="campus">
+  <div class="wrap wrap-wide">
+    <div class="campus-feature">
+      <div class="reveal">
+        <span class="kicker" data-i18n="campus.kicker">One platform replaces them all</span>
+        <h2 class="display t-2xl" style="margin-top:18px" data-i18n="campus.title">Your entire journey lives inside SOIC.</h2>
+        <p class="soft" style="margin-top:18px;max-width:48ch" data-i18n="campus.sub">Today, learning is scattered across a dozen apps. We pulled it into one cinematic campus — so nothing, and no one, gets lost.</p>
+        <ul class="feature-list">
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><div><h4 data-i18n="feat.learn.t">Cinematic learning</h4><p data-i18n="feat.learn.d">Video lessons with transcripts, notes, AI summaries, and your next step always queued.</p></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></span><div><h4 data-i18n="feat.live.t">Live classrooms</h4><p data-i18n="feat.live.d">HD sessions with raise-hand, polls, breakout crews, attendance, and instant replays.</p></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></span><div><h4 data-i18n="feat.community.t">A real community</h4><p data-i18n="feat.community.d">Spaces, channels, voice rooms, and crews — belonging that Discord and WhatsApp can't give a film school.</p></div></li>
+          <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><div><h4 data-i18n="feat.portfolio.t">Auto-built portfolio</h4><p data-i18n="feat.portfolio.d">Every assignment becomes a portfolio piece on your own public film profile.</p></div></li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal" aria-hidden="true">
+        <div class="mock">
+          <div class="mock-rail">
+            <div class="mock-logo">S</div>
+            <div class="mock-ico active"></div><div class="mock-ico"></div>
+            <div class="mock-ico"></div><div class="mock-ico"></div>
+            <div class="mock-ico" style="margin-top:auto"></div>
+          </div>
+          <div class="mock-main">
+            <div class="mock-top">
+              <div class="mock-search"></div>
+              <div class="mock-live"><span></span>LIVE · Color Grading</div>
+            </div>
+            <div class="mock-greet">Good evening, Layla.</div>
+            <div class="mock-row">
+              <div class="mock-continue">
+                <div class="mock-play">▶</div>
+                <div><div class="mock-l1"></div><div class="mock-l2"></div><div class="mock-bar"><i></i></div></div>
+              </div>
+              <div class="mock-side">
+                <div class="mock-card"></div><div class="mock-card"></div>
+              </div>
+            </div>
+            <div class="mock-thumbs"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOIC IN MOTION (video gallery) ===================== -->
+<section class="section" id="motion">
+  <div class="wrap wrap-wide">
+    <div class="sec-head center reveal">
+      <span class="kicker" data-i18n="motion.kicker">SOIC in motion</span>
+      <h2 class="display t-2xl" data-i18n="motion.title">See the campus come alive.</h2>
+      <p class="soft" data-i18n="motion.sub">Real classes, real crews, real student voices — straight from the SOIC studios. Tap a clip to unmute.</p>
+    </div>
+    <div class="video-gallery" data-stagger>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/campus-1.jpg"><source src="assets/video/vid-campus.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Inside the SOIC campus</figcaption></figure>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/prog-cinematography.jpeg"><source src="assets/video/vid-lighting.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Secrets of light intensity</figcaption></figure>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/prog-editing.jpeg"><source src="assets/video/vid-editing.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Editing &amp; color lab</figcaption></figure>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/prog-filmmaking.jpeg"><source src="assets/video/vid-camera.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Camera movement &amp; light</figcaption></figure>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/campus-2.jpg"><source src="assets/video/vid-workshop.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Commercial filming workshop</figcaption></figure>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/show-2.jpeg"><source src="assets/video/vid-malak.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Malak's Filmmaking story</figcaption></figure>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/show-1.jpeg"><source src="assets/video/vid-reem.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Reem from Bahrain</figcaption></figure>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/show-3.jpeg"><source src="assets/video/vid-omar.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Omar from Yemen</figcaption></figure>
+      <figure class="vid-card" data-vid><video muted loop playsinline preload="none" poster="assets/img/prog-vfx.jpeg"><source src="assets/video/vid-certificate.mp4" type="video/mp4" /></video><div class="vid-ctrls"><button class="vid-btn" data-mute aria-label="Toggle sound"><svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg></button><button class="vid-btn" data-full aria-label="Fullscreen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button></div><figcaption class="vid-cap">Your accredited certificate</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FACULTY ===================== -->
+<section class="section section--panel spotlight" id="faculty">
+  <div class="wrap wrap-wide">
+    <div class="sec-head center reveal"><span class="kicker" data-i18n="faculty.kicker">Learn from the masters</span><h2 class="display t-2xl" data-i18n="faculty.title">Taught by the people who built the industry.</h2></div>
+    <div class="faculty-grid" data-stagger>
+      <article class="faculty-card"><img src="assets/img/fac-asser.jpeg" alt="Dr. Mohamed Asser" loading="lazy" /><div class="ov"><div class="name">Dr. Mohamed Asser</div><div class="role">Cinematography</div></div></article>
+      <article class="faculty-card"><img src="assets/img/fac-elbasha.jpeg" alt="Dr. Maged El-Basha" loading="lazy" /><div class="ov"><div class="name">Dr. Maged El-Basha</div><div class="role">Visual Effects</div></div></article>
+      <article class="faculty-card"><img src="assets/img/fac-fahmy.jpeg" alt="Dr. Yehia Fahmy" loading="lazy" /><div class="ov"><div class="name">Dr. Yehia Fahmy</div><div class="role">Cinematography</div></div></article>
+      <article class="faculty-card"><img src="assets/img/fac-aasar.jpeg" alt="Dr. Adel Al-Aasar" loading="lazy" /><div class="ov"><div class="name">Dr. Adel Al-Aasar</div><div class="role">Film Directing</div></div></article>
+      <article class="faculty-card"><img src="assets/img/fac-salama.jpeg" alt="Dr. Ayman Salama" loading="lazy" /><div class="ov"><div class="name">Dr. Ayman Salama</div><div class="role">Script Writing</div></div></article>
+      <article class="faculty-card"><img src="assets/img/fac-haitham.jpeg" alt="Dr. Haitham Karam" loading="lazy" /><div class="ov"><div class="name">Dr. Haitham Karam</div><div class="role">Editing &amp; Color</div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SHOWCASE ===================== -->
+<section class="section" id="showcase">
+  <div class="wrap wrap-wide">
+    <div class="sec-head reveal"><div><span class="kicker" data-i18n="showcase.kicker">Made at SOIC</span><h2 class="display t-2xl" style="margin-top:18px" data-i18n="showcase.title">The proof is on the screen.</h2></div><a href="login.html" class="btn btn-ghost" data-i18n="showcase.cta">Enter the showcase</a></div>
+    <div class="showcase-grid" data-stagger>
+      <a class="film clean" href="login.html"><img src="assets/img/show-1.jpeg" alt="SOIC original — Sign Language Cinema initiative" loading="lazy"/><div class="ov"></div></a>
+      <a class="film clean" href="login.html"><img src="assets/img/campus-1.jpg" alt="SOIC Teen Studio" loading="lazy"/><div class="ov"></div></a>
+      <a class="film clean" href="login.html"><img src="assets/img/campus-2.jpg" alt="SOIC free workshop — VFX & Filmmaking" loading="lazy"/><div class="ov"></div></a>
+      <a class="film clean" href="login.html"><img src="assets/img/show-3.jpeg" alt="SOIC production still" loading="lazy"/><div class="ov"></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FROM OUR STUDENTS ===================== -->
+<section class="section section--panel" id="students">
+  <div class="wrap wrap-wide">
+    <div class="sec-head center reveal">
+      <span class="kicker" data-i18n="students.kicker">From our students</span>
+      <h2 class="display t-2xl" data-i18n="students.title">A community that ships, together.</h2>
+      <p class="soft" data-i18n="students.sub">Real words from the filmmakers who turned passion into a career at SOIC.</p>
+    </div>
+  </div>
+  <div class="testi-rows" data-testimonials>
+    <div class="testi-row"><div class="testi-track" data-row="0"></div></div>
+    <div class="testi-row rev"><div class="testi-track" data-row="1"></div></div>
+    <div class="testi-row"><div class="testi-track" data-row="2"></div></div>
+  </div>
+</section>
+
+<!-- ===================== REPLACES (lower) ===================== -->
+<section class="section" id="replaces">
+  <div class="wrap wrap-wide">
+    <div class="sec-head center reveal"><span class="kicker" data-i18n="campus.replaces">Goodbye to the chaos</span><h2 class="display t-2xl" style="max-width:22ch">No more switching between seven apps to take one class.</h2></div>
+    <div class="replaces" data-stagger>
+      <div class="r"><span class="x"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>WhatsApp</span></div>
+      <div class="r"><span class="x"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Discord</span></div>
+      <div class="r"><span class="x"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Slack</span></div>
+      <div class="r"><span class="x"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Zoom</span></div>
+      <div class="r"><span class="x"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Classroom</span></div>
+      <div class="r"><span class="x"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></span><span>Telegram</span></div>
+      <div class="r soic"><span class="brand-chip">S</span><span>SOIC</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PARTNERS (lower) ===================== -->
+<section class="section tight section--panel">
+  <div class="wrap wrap-wide reveal">
+    <p class="overline" style="text-align:center;margin-bottom:26px" data-i18n="partners.title">Trained on industry-standard gear · in partnership with</p>
+    <div class="partners">
+      <img class="p-canon" src="assets/img/partner-canon.png" alt="Canon" loading="lazy" />
+      <img class="p-sony" src="assets/img/partner-sony.png" alt="Sony" loading="lazy" />
+      <img class="p-arri" src="assets/img/partner-arri.png" alt="ARRI" loading="lazy" />
+      <img class="p-haki" src="assets/img/partner-haki.png" alt="Haki" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BAND ===================== -->
+<section class="section" id="admissions">
+  <div class="wrap wrap-wide">
+    <div class="cta-band reveal spotlight">
+      <div class="glow"></div>
+      <span class="kicker" style="justify-content:center;position:relative">Admissions open · Fall 2026 cohort</span>
+      <h2 class="display t-3xl" style="margin:22px auto 0;position:relative" data-i18n="cta.title">Your first film starts here.</h2>
+      <p class="soft" style="margin:18px auto 0;max-width:46ch;position:relative" data-i18n="cta.sub">Applications for the next cohort are open. Seats are limited and reviewed in order.</p>
+      <div class="cta-row center" style="margin-top:34px;position:relative;justify-content:center;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="apply.html" class="btn btn-primary btn-lg" data-i18n="cta.apply">Start your application</a>
+        <a href="https://wa.me/201033666656" class="btn btn-ghost btn-lg" data-i18n="cta.talk">Talk to admissions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAP / LOCATION ===================== -->
+<section class="section tight section--panel" id="location">
+  <div class="wrap wrap-wide">
+    <div class="sec-head center reveal">
+      <span class="kicker" data-i18n="loc.kicker">Visit the campus</span>
+      <h2 class="display t-2xl" data-i18n="loc.title">Downtown Cairo. Where it all happens.</h2>
+    </div>
+    <div class="map-wrap reveal">
+      <div class="map-card glass">
+        <div class="brand" style="margin-bottom:14px"><img src="assets/img/logo-soic.png" alt="SOIC" class="brand-logo" /></div>
+        <h4 style="font-weight:600;font-size:var(--t-base);margin-bottom:6px" data-i18n="loc.name">SOIC — School of Cinema</h4>
+        <p class="muted t-sm" data-i18n="loc.addr">1 Fahmy St., Abdeen,<br>Downtown Cairo, Egypt</p>
+        <div class="stack" style="margin-top:16px;--s-4:8px">
+          <a href="tel:+201033666656" class="row t-sm" style="gap:10px"><span class="gold">☏</span> +20 103 366 6656</a>
+          <a href="mailto:info@soicedu.com" class="row t-sm" style="gap:10px"><span class="gold">✉</span> info@soicedu.com</a>
+        </div>
+        <a href="https://maps.google.com/?q=1+Fahmy+St+Abdeen+Cairo" target="_blank" rel="noopener" class="btn btn-ghost btn-sm btn-block" style="margin-top:18px" data-i18n="loc.directions">Get directions</a>
+      </div>
+      <iframe class="map-embed" title="SOIC location — Abdeen, Cairo" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Abdeen,%20Cairo,%20Egypt&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-foot">
+  <div class="wrap wrap-wide">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="brand"><img src="assets/img/logo-soic.png" alt="SOIC — School of Cinema" class="brand-logo" /></a>
+        <p class="muted t-sm" style="margin-top:18px;max-width:30ch" data-i18n="foot.tag">The digital cinema campus of the Middle East.</p>
+        <div class="row" style="margin-top:20px;gap:10px">
+          <a href="#" class="theme-toggle" aria-label="Instagram">◎</a>
+          <a href="#" class="theme-toggle" aria-label="Facebook">f</a>
+          <a href="https://wa.me/201033666656" class="theme-toggle" aria-label="WhatsApp">✆</a>
+        </div>
+      </div>
+      <div><h5 data-i18n="foot.explore">Explore</h5><a href="#programs">Programs</a><a href="#campus">The Campus</a><a href="#faculty">Faculty</a><a href="#showcase">Showcase</a><a href="#students">Students</a><a href="apply.html">Admissions</a></div>
+      <div><h5 data-i18n="foot.campus">Campus</h5><a href="login.html">Log in</a><a href="app.html">Dashboard</a><a href="lesson.html">Lessons</a><a href="community.html">Community</a><a href="profile.html">My account</a><a href="apply.html">Apply</a></div>
+      <div><h5 data-i18n="foot.company">Company</h5><a href="#">About</a><a href="#">SOIC Radio</a><a href="#">SOIC Podcast</a><a href="#">Blog</a><a href="#">Careers</a></div>
+      <div><h5 data-i18n="foot.connect">Connect</h5><a href="mailto:info@soicedu.com">info@soicedu.com</a><a href="tel:+201033666656">+20 103 366 6656</a><a href="#location">1 Fahmy St., Abdeen</a><a href="#location">Downtown Cairo, Egypt</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="foot.rights">© 2026 SOIC — School of Cinema. Cairo, Egypt.</span>
+      <span class="row" style="gap:20px"><a href="#" class="muted">Privacy</a><a href="#" class="muted">Terms</a><a href="#" class="muted">Accessibility</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* 48 student testimonials → 3-row marquee */
+window.SOIC_TESTIMONIALS = [
+ {n:"Nour Hassan",p:"Filmmaking '26",q:"I came in with a phone and a dream. I left with a crew, a showreel, and a job."},
+ {n:"Karim Said",p:"Cinematography '26",q:"The single-source lighting lesson changed how I see every frame now."},
+ {n:"Rana Adel",p:"Editing '25",q:"Critiques with timestamped notes are gold. My pacing finally clicked."},
+ {n:"Omar Adel",p:"VFX '25",q:"Went from zero to compositing real shots in under three months."},
+ {n:"Salma Tarek",p:"Cinematography '26",q:"Shooting with ARRI on campus then reviewing online — best of both."},
+ {n:"Youssef Farouk",p:"Script Writing '25",q:"My first feature outline got read by a working producer here."},
+ {n:"Mariam Hany",p:"Filmmaking '24",q:"The cohort became my film crew. We still shoot together every month."},
+ {n:"Ahmed Zaki",p:"Editing '26",q:"Recorded lessons meant I could learn after my day job. Game changer."},
+ {n:"Layla Mansour",p:"Filmmaking '26",q:"Live classes feel like a real set — raise your hand, get answered instantly."},
+ {n:"Hana Sherif",p:"VFX '26",q:"The AI summary saved my notes, the instructor saved my shots."},
+ {n:"Tarek Magdy",p:"Cinematography '25",q:"My portfolio built itself — every assignment is now a public piece."},
+ {n:"Dina Fouad",p:"Script Writing '26",q:"From blank page to a produced short in one semester."},
+ {n:"Mostafa Nabil",p:"Filmmaking '25",q:"Found my DoP, my editor and my best friends in the community."},
+ {n:"Aya Khaled",p:"Editing '26",q:"The rhythm exercises rewired my brain. I cut faster and cleaner."},
+ {n:"Seif El-Din",p:"VFX '24",q:"Now working at a Cairo post house — SOIC's reel got me the interview."},
+ {n:"Farida Sami",p:"Cinematography '26",q:"Color grading masterclass alone was worth the whole diploma."},
+ {n:"Bassel Wael",p:"Filmmaking '26",q:"On-campus shoots, online theory. I never lost momentum."},
+ {n:"Nada Ibrahim",p:"Script Writing '25",q:"Feedback was honest and kind. That's rare and it made me better."},
+ {n:"Hassan Gamal",p:"Editing '25",q:"I binged the recorded modules like Netflix — then actually applied them."},
+ {n:"Malak Ayman",p:"VFX '26",q:"Breakout rooms in live class = real crew practice, every week."},
+ {n:"Ziad Tamer",p:"Filmmaking '24",q:"Pitched my grad film in the community and three people joined the crew."},
+ {n:"Jana Mohsen",p:"Cinematography '26",q:"Instructors are working DoPs. You feel the industry in every note."},
+ {n:"Amir Rashad",p:"Editing '26",q:"My showreel doubled in quality. Recruiters actually reply now."},
+ {n:"Lina Hatem",p:"Script Writing '26",q:"Structure finally makes sense. My second act doesn't sag anymore."},
+ {n:"Marwan Adel",p:"VFX '25",q:"From YouTube tutorials to a real curriculum with real mentors."},
+ {n:"Habiba Sameh",p:"Filmmaking '26",q:"The campus replaced six apps. Everything I need is one login."},
+ {n:"Kareem Osama",p:"Cinematography '25",q:"Lensing for emotion — I'll never light a flat scene again."},
+ {n:"Sara Lotfy",p:"Editing '24",q:"Graduated, freelancing full-time, and still in the alumni channel."},
+ {n:"Adham Fathy",p:"VFX '26",q:"The assignment review caught mistakes I'd repeated for years."},
+ {n:"Maya Reda",p:"Script Writing '25",q:"I wrote more in one cohort than in three years alone."},
+ {n:"Fady Nader",p:"Filmmaking '25",q:"Live attendance kept me accountable. I never skipped — it mattered."},
+ {n:"Rowan Essam",p:"Cinematography '26",q:"Reviewing footage with the class taught me to see like an audience."},
+ {n:"Omar Sami",p:"Editing '26",q:"The transcript + notes combo is how I actually retained everything."},
+ {n:"Tia Magdy",p:"VFX '24",q:"My VFX breakdown is now my calling card. Built entirely at SOIC."},
+ {n:"Yara Hisham",p:"Filmmaking '26",q:"A film school that feels like a film set, not a classroom."},
+ {n:"Mahmoud Aly",p:"Script Writing '26",q:"Honest table reads in the community made my dialogue breathe."},
+ {n:"Nourhan Saad",p:"Cinematography '25",q:"From auto mode to full manual confidence in weeks."},
+ {n:"Khaled Yousri",p:"Editing '25",q:"The pacing critiques are surgical. My cuts have intention now."},
+ {n:"Salma Ashraf",p:"VFX '26",q:"Mentors who actually work in the industry — you feel the difference."},
+ {n:"Ali Mourad",p:"Filmmaking '24",q:"Met my producing partner here. We just wrapped our first short."},
+ {n:"Reem Adel",p:"Script Writing '26",q:"My logline finally lands a room. That skill came straight from class."},
+ {n:"Hamza Tarek",p:"Cinematography '26",q:"Shadow carries the story — that one idea reframed my whole craft."},
+ {n:"Farah Nabil",p:"Editing '26",q:"I learned to feel a cut, not just trim it. Huge shift."},
+ {n:"Ibrahim Sayed",p:"VFX '25",q:"Real shots, real feedback, real reel. That's the SOIC loop."},
+ {n:"Mai Hossam",p:"Filmmaking '25",q:"The dashboard always knew my next step. I never felt lost."},
+ {n:"Zeyad Amin",p:"Script Writing '24",q:"Now staffed on a series — my SOIC spec script opened the door."},
+ {n:"Nada Yasser",p:"Cinematography '26",q:"Lighting on a budget, results on a screen. Practical and real."},
+ {n:"Omar Hesham",p:"Editing '26",q:"Best community in the region, full stop. Everyone wants you to win."}
+];
+</script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
