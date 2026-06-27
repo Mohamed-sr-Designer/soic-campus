@@ -5,6 +5,22 @@
    Page sets: <body data-role="student|instructor" data-active="key" data-title="...">
    ============================================================ */
 (function () {
+  /* --- Auth + role gate ---------------------------------------------------
+     Presentational only: this shapes the UX flow (must "log in"; each role
+     sees its own area). It is NOT a security boundary — anyone can edit
+     localStorage. When a real backend exists, every protected action MUST be
+     enforced server-side; never trust these client values.
+  ------------------------------------------------------------------------ */
+  try {
+    var _auth = localStorage.getItem("soic-auth");
+    var _role = localStorage.getItem("soic-role");
+    if (_auth !== "1") { window.location.replace("login.html"); return; }
+    var _pageRole = document.body.dataset.role; // set on role-specific pages
+    if (_pageRole && _role && _pageRole !== _role) {
+      window.location.replace(_role === "instructor" ? "instructor.html" : "app.html"); return;
+    }
+  } catch (e) { /* storage unavailable — cannot enforce, fall through to render */ }
+
   const I = {
     grid: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
     book: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',

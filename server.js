@@ -22,12 +22,14 @@ const TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  let urlPath = decodeURIComponent(req.url.split("?")[0]);
+  let urlPath;
+  try { urlPath = decodeURIComponent(req.url.split("?")[0]); }
+  catch (e) { res.writeHead(400); res.end("Bad request"); return; }
   if (urlPath === "/") urlPath = "/index.html";
-  let filePath = path.join(root, urlPath);
+  const filePath = path.normalize(path.join(root, urlPath));
 
-  // prevent path traversal
-  if (!filePath.startsWith(root)) {
+  // prevent path traversal — the resolved path must stay inside root (with a separator boundary)
+  if (filePath !== root && !filePath.startsWith(root + path.sep)) {
     res.writeHead(403); res.end("Forbidden"); return;
   }
 
@@ -46,8 +48,15 @@ const server = http.createServer((req, res) => {
 
 function send(filePath, res) {
   const ext = path.extname(filePath).toLowerCase();
-  res.writeHead(200, { "Content-Type": TYPES[ext] || "application/octet-stream" });
-  fs.createReadStream(filePath).pipe(res);
+  const stream = fs.createReadStream(filePath);
+  stream.once("open", () => {
+    res.writeHead(200, { "Content-Type": TYPES[ext] || "application/octet-stream" });
+    stream.pipe(res);
+  });
+  stream.on("error", () => {
+    if (!res.headersSent) { res.writeHead(500); res.end("Server error"); }
+    else res.end();
+  });
 }
 
 server.listen(port, () => console.log(`SOIC Campus running at http://localhost:${port}`));

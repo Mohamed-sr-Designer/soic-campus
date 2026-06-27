@@ -47,11 +47,6 @@
 .hero .scroll-cue { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 3; color: rgba(255,255,255,.6); font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .hero .scroll-cue .line { width: 1px; height: 40px; background: linear-gradient(var(--gold-400), transparent); }
 
-/* trust marquee */
-.marquee { overflow: hidden; border-block: 1px solid var(--border); padding-block: 20px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee .track { display: flex; gap: 56px; width: max-content; animation: marquee 32s linear infinite; }
-.marquee .item { display: inline-flex; align-items: center; gap: 12px; color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
-
 /* section heading */
 .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--s-5); margin-bottom: var(--s-6); flex-wrap: wrap; }
 .sec-head h2 { font-size: var(--t-2xl); font-weight: 400; max-width: 18ch; }
@@ -119,16 +114,6 @@
 .fac-track:hover { animation-play-state: paused; }
 .fac-track .faculty-card { flex: 0 0 232px; }
 
-/* video gallery — horizontal rail carousel with arrows */
-.video-rail-wrap { position: relative; }
-.video-rail { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; scroll-behavior: smooth; }
-.video-rail::-webkit-scrollbar { height: 8px; }
-.video-rail .vid-card { flex: 0 0 clamp(168px, 22vw, 210px); scroll-snap-align: start; }
-.rail-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: var(--bg-700); border: 1px solid var(--line-strong); color: var(--text); display: grid; place-items: center; z-index: 4; box-shadow: var(--sh-3); transition: all var(--d-2) var(--ease); }
-.rail-arrow:hover { background: var(--gold-500); color: var(--on-accent); border-color: var(--gold-400); }
-.rail-arrow.prev { inset-inline-start: -10px; } .rail-arrow.next { inset-inline-end: -10px; }
-.rail-arrow svg { width: 20px; height: 20px; }
-@media (max-width: 720px) { .rail-arrow { display: none; } }
 
 /* showcase — clean self-contained SOIC banners (no text overlay) */
 .showcase-grid .film.clean .ov { background: linear-gradient(transparent 70%, rgba(7,12,36,.5)); }
