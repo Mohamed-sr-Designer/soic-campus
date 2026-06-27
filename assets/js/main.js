@@ -210,7 +210,7 @@ function initVideos() {
   });
 }
 
-/* ---- Public nav: show the user's avatar when logged in (replaces "Log in") ---- */
+/* ---- Public nav: when logged in, swap "Log in" for an avatar menu (Dashboard / Account / Log out) ---- */
 function initAuthNav() {
   let authed = false, user = null, role = "student";
   try {
@@ -218,15 +218,32 @@ function initAuthNav() {
     user = JSON.parse(localStorage.getItem("soic-user") || "null");
     role = localStorage.getItem("soic-role") || "student";
   } catch (e) {}
-  if (!authed) return;
   const loginLink = document.querySelector('.nav .actions a[href="login.html"]');
-  if (!loginLink) return;
+  if (!authed || !loginLink) return; // logged out -> leave the real "Log in" button in place
   const home = role === "instructor" ? "instructor.html" : "app.html";
-  const name = (user && user.name) || "";
+  const name = (user && user.name) || "Member";
   const initials = name ? name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase() : "ME";
   const inner = (user && user.avatar) ? '<img src="' + user.avatar + '" alt="">' : initials;
   const style = (user && user.avatar) ? "" : "background:linear-gradient(135deg,#2e2740,#181522)";
-  loginLink.outerHTML = '<a href="' + home + '" class="avatar sm" title="' + (name || "Dashboard") + '" style="' + style + '">' + inner + '</a>';
+  const wrap = document.createElement("div");
+  wrap.className = "nav-user";
+  wrap.innerHTML =
+    '<button class="avatar sm" type="button" data-user-toggle title="' + name + '" style="' + style + '">' + inner + '</button>' +
+    '<div class="user-menu">' +
+      '<div class="user-menu-head"><span class="avatar sm" style="' + style + '">' + inner + '</span>' +
+        '<div><div class="um-name">' + name + '</div><div class="um-role">' + (role === "instructor" ? "Instructor" : "Student") + '</div></div></div>' +
+      '<a href="' + home + '">Dashboard</a>' +
+      '<a href="profile.html">My account</a>' +
+      '<button type="button" data-logout>Log out</button>' +
+    '</div>';
+  loginLink.replaceWith(wrap);
+  const menu = wrap.querySelector(".user-menu");
+  wrap.querySelector("[data-user-toggle]").addEventListener("click", (e) => { e.stopPropagation(); menu.classList.toggle("open"); });
+  document.addEventListener("click", () => menu.classList.remove("open"));
+  wrap.querySelector("[data-logout]").addEventListener("click", () => {
+    try { ["soic-auth", "soic-role", "soic-user"].forEach(k => localStorage.removeItem(k)); } catch (e) {}
+    window.location.href = "index.html";
+  });
 }
 
 /* ---- Apply modal (overlay form) ---- */
