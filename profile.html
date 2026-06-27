@@ -19,9 +19,13 @@
       <div class="card" style="overflow:hidden;margin-bottom:24px">
         <div style="height:120px;background:var(--grad-stage);position:relative"></div>
         <div class="card-pad" style="display:flex;gap:20px;align-items:flex-end;margin-top:-46px;flex-wrap:wrap">
-          <span class="avatar" style="width:92px;height:92px;font-size:30px;border:3px solid var(--surface);background:linear-gradient(135deg,#2e2740,#181522)">LM</span>
+          <div style="position:relative">
+            <span class="avatar" id="pfAvatar" style="width:92px;height:92px;font-size:30px;border:3px solid var(--surface);background:linear-gradient(135deg,#2e2740,#181522)">LM</span>
+            <button class="pf-photo-btn" id="pfChange" type="button" title="Change photo" aria-label="Change photo"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></button>
+            <input type="file" id="pfPhoto" accept="image/*" hidden />
+          </div>
           <div style="flex:1;min-width:200px">
-            <h1 class="display t-xl" style="line-height:1">Layla Mansour</h1>
+            <h1 class="display t-xl" id="pfName" style="line-height:1">Layla Mansour</h1>
             <p class="muted t-sm" style="margin-top:4px">Filmmaking Diploma · Cohort F-26 · Cairo, Egypt</p>
             <a href="#" class="link t-sm mono">soic.film/@layla</a>
           </div>
@@ -34,13 +38,13 @@
         <section class="card card-pad col-7">
           <h3 style="font-weight:600;font-size:var(--t-md);margin-bottom:16px">Account information</h3>
           <div class="form-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-            <div class="field"><label>Full name</label><input class="input" value="Layla Mansour" /></div>
-            <div class="field"><label>Email</label><input class="input" value="layla@soic.edu" /></div>
+            <div class="field"><label>Full name</label><input class="input" id="pfNameInput" value="Layla Mansour" /></div>
+            <div class="field"><label>Email</label><input class="input" id="pfEmailInput" value="layla@soic.edu" /></div>
             <div class="field"><label>Phone</label><input class="input" value="+20 100 000 0000" /></div>
             <div class="field"><label>Country</label><input class="input" value="Egypt" /></div>
             <div class="field" style="grid-column:1/-1"><label>Bio</label><textarea class="textarea" rows="3">Aspiring director from Cairo. Drawn to intimate character studies and natural light.</textarea></div>
           </div>
-          <div class="row" style="gap:10px;margin-top:16px"><button class="btn btn-primary btn-sm">Save changes</button><button class="btn btn-quiet btn-sm">Cancel</button></div>
+          <div class="row" style="gap:10px;margin-top:16px"><button class="btn btn-primary btn-sm" id="pfSave">Save changes</button><button class="btn btn-quiet btn-sm">Cancel</button></div>
         </section>
 
         <!-- skills + status -->
@@ -80,12 +84,55 @@
         </section>
       </div>
 
-      <div style="margin-top:24px"><a href="login.html" class="btn btn-ghost btn-sm" onclick="try{localStorage.removeItem('soic-auth');localStorage.removeItem('soic-role')}catch(e){}">Log out</a></div>
+      <div style="margin-top:24px"><a href="login.html" class="btn btn-ghost btn-sm" onclick="try{localStorage.removeItem('soic-auth');localStorage.removeItem('soic-role');localStorage.removeItem('soic-user')}catch(e){}">Log out</a></div>
     </main>
   </div></div>
 </div>
 <nav class="tabbar" data-tabbar></nav>
 <div data-palette-host></div>
 <script src="assets/js/shell.js"></script><script src="assets/js/i18n.js"></script><script src="assets/js/main.js"></script>
+<script>
+(function () {
+  var user = {}; try { user = JSON.parse(localStorage.getItem("soic-user") || "{}"); } catch (e) {}
+  var av = document.getElementById("pfAvatar"), nameH = document.getElementById("pfName"),
+      nameI = document.getElementById("pfNameInput"), emailI = document.getElementById("pfEmailInput");
+  function initials(n) { return ((n || "").trim().split(/\s+/).map(function (w) { return w[0]; }).slice(0, 2).join("").toUpperCase()) || "U"; }
+  function renderAvatar() {
+    if (user.avatar) { av.innerHTML = '<img src="' + user.avatar + '" alt="">'; av.style.background = "none"; }
+    else { av.textContent = initials(user.name); }
+  }
+  if (user.name) { if (nameH) nameH.textContent = user.name; if (nameI) nameI.value = user.name; }
+  if (user.email && emailI) emailI.value = user.email;
+  renderAvatar();
+
+  // Change photo — downscaled to ~256px so it fits in localStorage
+  var input = document.getElementById("pfPhoto");
+  document.getElementById("pfChange").addEventListener("click", function () { input.click(); });
+  input.addEventListener("change", function (e) {
+    var f = e.target.files[0]; if (!f) return;
+    var img = new Image(), url = URL.createObjectURL(f);
+    img.onload = function () {
+      var max = 256, s = Math.min(max / img.width, max / img.height, 1);
+      var w = Math.round(img.width * s), h = Math.round(img.height * s);
+      var c = document.createElement("canvas"); c.width = w; c.height = h;
+      c.getContext("2d").drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(url);
+      user.avatar = c.toDataURL("image/jpeg", 0.85);
+      try { localStorage.setItem("soic-user", JSON.stringify(user)); } catch (err) { alert("Couldn't save the photo (device storage is full)."); }
+      renderAvatar();
+    };
+    img.src = url;
+  });
+
+  // Save name/email
+  var saveBtn = document.getElementById("pfSave");
+  if (saveBtn) saveBtn.addEventListener("click", function () {
+    if (nameI && nameI.value.trim()) user.name = nameI.value.trim();
+    if (emailI && emailI.value.trim()) user.email = emailI.value.trim();
+    try { localStorage.setItem("soic-user", JSON.stringify(user)); } catch (e) {}
+    if (nameH) nameH.textContent = user.name || ""; renderAvatar();
+  });
+})();
+</script>
 </body>
 </html>

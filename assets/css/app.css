@@ -107,6 +107,10 @@
 .cert-card { display: flex; gap: 16px; align-items: center; padding: 16px; border: 1px solid var(--border); border-radius: var(--r-3); background: var(--surface-raised); }
 .cert-seal { width: 54px; height: 54px; border-radius: 50%; flex: none; display: grid; place-items: center; background: rgba(255,193,7,.12); border: 1px solid var(--gold-500); color: var(--gold-400); }
 
+/* profile change-photo button */
+.pf-photo-btn { position: absolute; bottom: 0; inset-inline-end: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--gold-500); color: var(--on-accent); border: 2px solid var(--surface); display: grid; place-items: center; cursor: pointer; transition: filter var(--d-2) var(--ease); }
+.pf-photo-btn:hover { filter: brightness(1.1); }
+
 .app-body { padding: var(--s-6); max-width: 1100px; }
 .app.has-rail .app-body { max-width: none; }
 .page-head { margin-bottom: var(--s-6); }

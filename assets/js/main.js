@@ -210,6 +210,25 @@ function initVideos() {
   });
 }
 
+/* ---- Public nav: show the user's avatar when logged in (replaces "Log in") ---- */
+function initAuthNav() {
+  let authed = false, user = null, role = "student";
+  try {
+    authed = localStorage.getItem("soic-auth") === "1";
+    user = JSON.parse(localStorage.getItem("soic-user") || "null");
+    role = localStorage.getItem("soic-role") || "student";
+  } catch (e) {}
+  if (!authed) return;
+  const loginLink = document.querySelector('.nav .actions a[href="login.html"]');
+  if (!loginLink) return;
+  const home = role === "instructor" ? "instructor.html" : "app.html";
+  const name = (user && user.name) || "";
+  const initials = name ? name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase() : "ME";
+  const inner = (user && user.avatar) ? '<img src="' + user.avatar + '" alt="">' : initials;
+  const style = (user && user.avatar) ? "" : "background:linear-gradient(135deg,#2e2740,#181522)";
+  loginLink.outerHTML = '<a href="' + home + '" class="avatar sm" title="' + (name || "Dashboard") + '" style="' + style + '">' + inner + '</a>';
+}
+
 /* ---- Apply modal (overlay form) ---- */
 function initApplyModal() {
   const modal = document.getElementById("applyModal");
@@ -231,5 +250,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   if (typeof initLang === "function") initLang();
   initReveals(); initNav(); initCounters(); initPalette(); initTabs();
-  initTestimonials(); initLoops(); buildVideoRail(); initVideos(); initApplyModal();
+  initTestimonials(); initLoops(); buildVideoRail(); initVideos(); initApplyModal(); initAuthNav();
 });

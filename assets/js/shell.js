@@ -39,6 +39,9 @@
     cog: '<circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.6-2-3.4-2.4 1a7 7 0 0 0-1.7-1l-.4-2.5h-4l-.4 2.5a7 7 0 0 0-1.7 1l-2.4-1-2 3.4 2 1.6a7 7 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 1.7 1l.4 2.5h4l.4-2.5a7 7 0 0 0 1.7-1l2.4 1 2-3.4-2-1.6c.1-.3.1-.7.1-1z"/>'
   };
   const svg = (p) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">' + p + '</svg>';
+  // avatar inner = uploaded photo (if any) else initials; bg gradient only when there's no photo
+  const avInner = (c) => c.avatar ? '<img src="' + c.avatar + '" alt="">' : c.initials;
+  const avStyle = (c) => c.avatar ? '' : 'background:' + c.grad;
 
   const ROLES = {
     student: {
@@ -103,7 +106,7 @@
       h += '</div>';
     });
     h += '<div class="side-foot"><a class="role-switch" href="profile.html">' +
-      '<span class="avatar sm" style="background:' + cfg.grad + '">' + cfg.initials + '</span>' +
+      '<span class="avatar sm" style="' + avStyle(cfg) + '">' + avInner(cfg) + '</span>' +
       '<span class="meta"><span class="n">' + cfg.name + '</span><span class="r" data-i18n="role.' + cfg.role.toLowerCase() + '">' + cfg.role + '</span></span>' +
       '<span class="chev">' + svg('<path d="M8 9l4-4 4 4M16 15l-4 4-4-4"/>') + '</span></a></div>';
     return h;
@@ -120,7 +123,7 @@
       '<div class="notif-wrap"><button class="icon-btn" data-notif aria-label="Notifications"><span class="dot"></span><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg></button>' + notifPanel() + '</div>' +
       '<button class="icon-btn" data-theme-toggle aria-label="Theme"><span data-theme-label>☀</span></button>' +
       '<button class="icon-btn" data-lang-toggle aria-label="Language" style="font-family:var(--font-mono);font-size:12px"><span data-lang-label>ع</span></button>' +
-      '<a href="profile.html" class="avatar sm" style="background:' + cfg.grad + '">' + cfg.initials + '</a>';
+      '<a href="profile.html" class="avatar sm" title="My account" style="' + avStyle(cfg) + '">' + avInner(cfg) + '</a>';
   }
 
   function notifPanel() {
@@ -166,7 +169,15 @@
   }
 
   // ---- render ----
-  const cfg = ROLES[getRole()] || ROLES.student;
+  const cfg = Object.assign({}, ROLES[getRole()] || ROLES.student);
+  // overlay the logged-in user's name + photo (from login/signup), if present
+  try {
+    const _u = JSON.parse(localStorage.getItem("soic-user") || "null");
+    if (_u) {
+      if (_u.name) { cfg.name = _u.name; cfg.initials = _u.name.trim().split(/\s+/).map(function (w) { return w[0]; }).slice(0, 2).join("").toUpperCase(); }
+      if (_u.avatar) cfg.avatar = _u.avatar;
+    }
+  } catch (e) {}
   const active = document.body.dataset.active || "dashboard";
   const title = document.body.dataset.title || "Dashboard";
   const sb = document.querySelector("[data-sidebar]"); if (sb) sb.innerHTML = buildSidebar(cfg, active);
