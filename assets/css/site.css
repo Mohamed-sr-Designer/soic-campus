@@ -155,6 +155,20 @@
 .vid-cap { position: absolute; inset-inline: 0; bottom: 0; padding: 12px 14px; z-index: 2; font-size: var(--t-xs); color: #fff; font-weight: 500; pointer-events: none; }
 .vid-card.is-playing-sound { outline: 2px solid var(--gold-400); outline-offset: -2px; }
 .vid-card.is-playing-sound::after { background: linear-gradient(transparent 68%, rgba(5,6,10,.7)); }
+/* Fullscreen: show the clip at natural aspect (no stretch/crop), letterboxed */
+.vid-card video:fullscreen { object-fit: contain; width: 100%; height: 100%; background: #000; }
+.vid-card video:-webkit-full-screen { object-fit: contain; width: 100%; height: 100%; background: #000; }
+video:fullscreen { object-fit: contain; background: #000; }
+video:-webkit-full-screen { object-fit: contain; background: #000; }
+
+/* ---------------- Modal overlay (application form) ---------------- */
+.modal { position: fixed; inset: 0; z-index: 300; display: none; align-items: flex-start; justify-content: center; padding: 5vh 16px; overflow-y: auto; }
+.modal.open { display: flex; }
+.modal-backdrop { position: fixed; inset: 0; background: rgba(4,5,9,.74); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); animation: fade var(--d-2) var(--ease); }
+.modal-card { position: relative; z-index: 1; width: min(700px, 100%); background: var(--bg-800); border: 1px solid var(--line-strong); border-radius: var(--r-4); box-shadow: var(--sh-4); padding: clamp(22px, 4vw, 40px); margin-block: auto; animation: scale-in var(--d-3) var(--ease); }
+.modal-close { position: absolute; top: 16px; inset-inline-end: 16px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--bg-700); color: var(--text-soft); display: grid; place-items: center; transition: all var(--d-2) var(--ease); z-index: 2; }
+.modal-close:hover { background: var(--surface-hover); color: var(--text); border-color: var(--line-strong); }
+body.modal-open { overflow: hidden; }
 
 /* The "Campus" showcase — product preview */
 .campus-feature { display: grid; grid-template-columns: 1.05fr 1fr; gap: var(--s-7); align-items: center; }

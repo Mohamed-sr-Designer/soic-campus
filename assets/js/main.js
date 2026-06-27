@@ -147,8 +147,6 @@ function buildVideoRail() {
     ["vid-shiko.mp4", "DoP Ahmed Bashary on campus", "assets/img/campus-1.jpg"],
     ["vid-reviews.mp4", "What our trainees say", "assets/img/show-1.jpeg"],
     ["vid-heba.mp4", "Media figure Heba Kamel on SOIC", "assets/img/campus-2.jpg"],
-    ["vid-message1.mp4", "A student's message", "assets/img/show-1.jpeg"],
-    ["vid-message2.mp4", "A trainee's message", "assets/img/show-2.jpeg"],
   ];
   const muteIco = '<svg class="i-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M11 5 6 9H2v6h4l5 4zM23 9l-6 6M17 9l6 6"/></svg><svg class="i-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="display:none"><path d="M11 5 6 9H2v6h4l5 4zM19 12a4 4 0 0 0-2-3.5M22 12a8 8 0 0 0-4-7"/></svg>';
   const fullIco = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>';
@@ -213,10 +211,26 @@ function initVideos() {
   });
 }
 
+/* ---- Apply modal (overlay form) ---- */
+function initApplyModal() {
+  const modal = document.getElementById("applyModal");
+  if (!modal) return;
+  const open = (e) => { if (e) e.preventDefault(); modal.classList.add("open"); document.body.classList.add("modal-open"); modal.setAttribute("aria-hidden", "false"); };
+  const close = () => { modal.classList.remove("open"); document.body.classList.remove("modal-open"); modal.setAttribute("aria-hidden", "true"); };
+  document.querySelectorAll("[data-apply-open]").forEach(b => b.addEventListener("click", open));
+  modal.querySelectorAll("[data-apply-close]").forEach(b => b.addEventListener("click", close));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("open")) close(); });
+  document.getElementById("applyModalForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    e.target.classList.add("hidden");
+    document.getElementById("applyModalDone").classList.remove("hidden");
+  });
+}
+
 /* ---- boot ---- */
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   if (typeof initLang === "function") initLang();
   initReveals(); initNav(); initCounters(); initPalette(); initTabs();
-  initTestimonials(); initLoops(); buildVideoRail(); initRailArrows(); initVideos();
+  initTestimonials(); initLoops(); buildVideoRail(); initRailArrows(); initVideos(); initApplyModal();
 });

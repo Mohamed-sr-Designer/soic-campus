@@ -37,7 +37,7 @@
       <button class="lang-toggle" data-lang-toggle aria-label="Switch language"><span data-lang-label>ع</span></button>
       <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"><span data-theme-label>☀</span></button>
       <a href="login.html" class="btn btn-ghost btn-sm" data-i18n="nav.login">Log in</a>
-      <a href="apply.html" class="btn btn-primary btn-sm" data-i18n="nav.apply">Apply now</a>
+      <a href="apply.html" data-apply-open class="btn btn-primary btn-sm" data-i18n="nav.apply">Apply now</a>
       <button class="lang-toggle nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Menu">☰</button>
     </div>
   </div>
@@ -53,7 +53,7 @@
   <a href="#students">Students</a>
   <a href="apply.html" data-i18n="nav.admissions">Admissions</a>
   <a href="login.html" class="btn btn-ghost btn-block" style="margin-top:16px" data-i18n="nav.login">Log in</a>
-  <a href="apply.html" class="btn btn-primary btn-block" data-i18n="nav.apply">Apply now</a>
+  <a href="apply.html" data-apply-open class="btn btn-primary btn-block" data-i18n="nav.apply">Apply now</a>
 </div>
 
 <main id="main">
@@ -74,7 +74,7 @@
     <h1 class="display reveal" data-i18n="hero.title">Where passion is<br>directed into <em>cinema</em>.</h1>
     <p class="sub reveal" data-i18n="hero.sub">Not another online course. A full digital campus where you learn from masters, build real films, and join the region's strongest filmmaking community — all in one room.</p>
     <div class="cta-row reveal">
-      <a href="apply.html" class="btn btn-primary btn-lg" data-i18n="hero.cta1">Explore programs</a>
+      <a href="#programs" class="btn btn-primary btn-lg" data-i18n="hero.cta1">Explore programs</a>
       <a href="#campus" class="btn btn-ghost btn-lg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none"/></svg>
         <span data-i18n="hero.cta2">Tour the campus</span>
@@ -295,7 +295,7 @@
       <h2 class="display t-3xl" style="margin:22px auto 0;position:relative" data-i18n="cta.title">Your first film starts here.</h2>
       <p class="soft" style="margin:18px auto 0;max-width:46ch;position:relative" data-i18n="cta.sub">Applications for the next cohort are open. Seats are limited and reviewed in order.</p>
       <div class="cta-row center" style="margin-top:34px;position:relative;justify-content:center;display:flex;gap:14px;flex-wrap:wrap">
-        <a href="apply.html" class="btn btn-primary btn-lg" data-i18n="cta.apply">Start your application</a>
+        <a href="apply.html" data-apply-open class="btn btn-primary btn-lg" data-i18n="cta.apply">Start your application</a>
         <a href="https://wa.me/201033666656" class="btn btn-ghost btn-lg" data-i18n="cta.talk">Talk to admissions</a>
       </div>
     </div>
@@ -351,6 +351,44 @@
     </div>
   </div>
 </footer>
+
+<!-- ===================== APPLY MODAL (overlay) ===================== -->
+<div class="modal" id="applyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Apply to SOIC">
+  <div class="modal-backdrop" data-apply-close></div>
+  <div class="modal-card">
+    <button class="modal-close" data-apply-close aria-label="Close"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <span class="kicker" data-i18n="apply.kicker">Admissions · Fall 2026 cohort</span>
+    <h2 class="display t-2xl" style="margin-top:12px" data-i18n="apply.title">Apply to SOIC</h2>
+    <p class="muted t-sm" style="margin-top:6px" data-i18n="apply.sub">Seats are limited and reviewed in order. Takes about 3 minutes.</p>
+    <form id="applyModalForm" style="margin-top:22px">
+      <div class="form-grid">
+        <div class="field"><label data-i18n="apply.name">Full name *</label><input class="input" required placeholder="Your name" /></div>
+        <div class="field"><label data-i18n="apply.email">Email *</label><input class="input" type="email" required placeholder="you@email.com" /></div>
+        <div class="field"><label data-i18n="apply.phone">Phone / WhatsApp *</label><input class="input" required placeholder="+20 …" /></div>
+        <div class="field"><label data-i18n="apply.country">Country / City</label><input class="input" placeholder="Cairo, Egypt" /></div>
+      </div>
+      <div class="field" style="margin-top:16px"><label data-i18n="apply.diploma">Diploma *</label>
+        <select class="select" name="program"><option>Filmmaking</option><option>Cinematography</option><option>Editing</option><option>Visual Effects</option><option>Script Writing</option></select>
+      </div>
+      <div style="margin-top:16px"><label class="t-sm soft" style="display:block;margin-bottom:8px" data-i18n="apply.mode">Study mode *</label>
+        <div class="choice-grid">
+          <label class="choice"><input type="radio" name="mode" value="On-campus" checked /> 🎬 <span data-i18n="modes.campus">On-campus</span></label>
+          <label class="choice"><input type="radio" name="mode" value="Live online" /> 📡 <span data-i18n="modes.online">Live online</span></label>
+          <label class="choice"><input type="radio" name="mode" value="Recorded" /> ⏺ <span data-i18n="modes.recorded">Recorded</span></label>
+        </div>
+      </div>
+      <div class="field" style="margin-top:16px"><label data-i18n="apply.reel">Showreel / portfolio link</label><input class="input" placeholder="YouTube, Vimeo, Drive… (optional)" /></div>
+      <label class="row" style="gap:10px;margin-top:18px;font-size:var(--t-sm)"><input type="checkbox" required style="accent-color:var(--gold-500)" /> <span data-i18n="apply.agree">I agree to be contacted by SOIC admissions.</span></label>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top:20px" data-i18n="apply.submit">Submit application</button>
+    </form>
+    <div id="applyModalDone" class="hidden" style="text-align:center;padding:24px 0">
+      <div style="width:72px;height:72px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;background:rgba(255,193,7,.12);border:1px solid var(--gold-500);color:var(--gold-400)"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h3 class="display t-xl" data-i18n="apply.done">Application received 🎬</h3>
+      <p class="soft" style="margin:10px auto 0;max-width:40ch" data-i18n="apply.donesub">Thank you. Admissions will reach out within 3 working days.</p>
+      <button class="btn btn-ghost" data-apply-close style="margin-top:22px" data-i18n="apply.close">Close</button>
+    </div>
+  </div>
+</div>
 
 <script>
 /* 48 student testimonials → 3-row marquee */
